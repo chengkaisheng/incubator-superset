@@ -192,7 +192,7 @@ class SupersetAppInitializer:
         appbuilder.add_view(
             AnnotationLayerModelView,
             "Annotation Layers",
-            label=__("Annotation Layers"),
+            label=_("Annotation Layers"),
             icon="fa-comment",
             category="Manage",
             category_label=__("Manage"),
