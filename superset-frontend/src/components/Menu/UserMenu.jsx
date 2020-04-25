@@ -51,12 +51,6 @@ export default function UserMenu({
         <span className="fa fa-fw fa-sign-out" />
         {t('Logout')}
       </MenuItem>
-      {(versionString || versionSha) && (
-        <li className="version-info">
-          {versionString && <div>Version: {versionString}</div>}
-          {versionSha && <div>SHA: {versionSha}</div>}
-        </li>
-      )}
     </NavDropdown>
   );
 }
