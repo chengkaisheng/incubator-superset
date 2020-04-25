@@ -195,41 +195,41 @@ class SupersetAppInitializer:
             label=_("Annotation Layers"),
             icon="fa-comment",
             category="Manage",
-            category_label=__("Manage"),
+            category_label=_("Manage"),
             category_icon="",
         )
         appbuilder.add_view(
             AnnotationModelView,
             "Annotations",
-            label=__("Annotations"),
+            label=_("Annotations"),
             icon="fa-comments",
             category="Manage",
-            category_label=__("Manage"),
+            category_label=_("Manage"),
             category_icon="",
         )
         appbuilder.add_view(
             DatabaseView,
             "Databases",
-            label=__("Databases"),
+            label=_("Databases"),
             icon="fa-database",
             category="Sources",
-            category_label=__("Sources"),
+            category_label=_("Sources"),
             category_icon="fa-database",
         )
         appbuilder.add_link(
             "Tables",
-            label=__("Tables"),
+            label=_("Tables"),
             href="/tablemodelview/list/?_flt_1_is_sqllab_view=y",
             icon="fa-table",
             category="Sources",
-            category_label=__("Sources"),
+            category_label=_("Sources"),
             category_icon="fa-table",
         )
         appbuilder.add_separator("Sources")
         appbuilder.add_view(
             SliceModelView,
             "Charts",
-            label=__("Charts"),
+            label=_("Charts"),
             icon="fa-bar-chart",
             category="",
             category_icon="",
@@ -237,7 +237,7 @@ class SupersetAppInitializer:
         appbuilder.add_view(
             DashboardModelView,
             "Dashboards",
-            label=__("Dashboards"),
+            label=_("Dashboards"),
             icon="fa-dashboard",
             category="",
             category_icon="",
@@ -245,18 +245,18 @@ class SupersetAppInitializer:
         appbuilder.add_view(
             CssTemplateModelView,
             "CSS Templates",
-            label=__("CSS Templates"),
+            label=_("CSS Templates"),
             icon="fa-css3",
             category="Manage",
-            category_label=__("Manage"),
+            category_label=_("Manage"),
             category_icon="",
         )
         appbuilder.add_view(
             QueryView,
             "Queries",
-            label=__("Queries"),
+            label=_("Queries"),
             category="Manage",
-            category_label=__("Manage"),
+            category_label=_("Manage"),
             icon="fa-search",
         )
         if self.config["ENABLE_ROW_LEVEL_SECURITY"]:
