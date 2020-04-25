@@ -302,7 +302,7 @@ class SupersetAppInitializer:
         #
         appbuilder.add_link(
             "Import Dashboards",
-            label=__("Import Dashboards"),
+            label=_("Import Dashboards"),
             href="/superset/import_dashboards",
             icon="fa-cloud-upload",
             category="Manage",
@@ -316,10 +316,11 @@ class SupersetAppInitializer:
             category_icon="fa-flask",
             icon="fa-flask",
             category="SQL Lab",
-            category_label=__("SQL Lab"),
+            category_label=_("SQL Lab"),
         )
         appbuilder.add_link(
-            __("Saved Queries"),
+            "Saved Queries",
+            label=_("Saved Queries"),
             href="/sqllab/my_queries/",
             icon="fa-save",
             category="SQL Lab",
@@ -335,7 +336,7 @@ class SupersetAppInitializer:
         )
         appbuilder.add_link(
             "Upload a CSV",
-            label=__("Upload a CSV"),
+            label=_("Upload a CSV"),
             href="/csvtodatabaseview/form",
             icon="fa-upload",
             category="Sources",
@@ -351,7 +352,7 @@ class SupersetAppInitializer:
             appbuilder.add_view(
                 LogModelView,
                 "Action Log",
-                label=__("Action Log"),
+                label=_("Action Log"),
                 category="Security",
                 category_label=__("Security"),
                 icon="fa-list-ol",
