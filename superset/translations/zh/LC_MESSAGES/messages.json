@@ -4,7 +4,7 @@
       "superset": {
          "": {
             "domain": "superset",
-            "plural_forms": "nplurals=1; plural=0;",
+            "plural_forms": "nplurals=1; plural=0",
             "lang": "zh"
          },
          "Time Column": [
@@ -702,9 +702,6 @@
          ],
          "datasource name": [
             "数据库名称"
-         ],
-         "Create a new chart": [
-            "创建新图表"
          ],
          "Choose a datasource": [
             "选择数据源"
@@ -3227,7 +3224,7 @@
             "操作"
          ],
          "dttm": [
-            "dttm"
+            "操作时间"
          ],
          "Action Log": [
             "操作日志"
@@ -3553,8 +3550,149 @@
          "Cannot find User %(name)s, please ask your admin to create one.": [
             "找不到用户 %(name)s，请您让管理员创建一个。"
          ],
+         "Filter List": [
+            "过滤器列表"
+         ],
+         "New": [
+            "新建"
+         ],
+         "Create a new chart": [
+            "创建新图表"
+         ],
+         "Determines whether or not this dashboard is visible in the list of all dashboards": [
+            "决定该仪表盘是否可以在看板列表中显示"
+         ],
          "Published": [
-            "是否发布"
+            "是否公开"
+         ],
+         "SQL Query": [
+            "SQL查询"
+         ],
+         "Refresh": [
+            "刷新"
+         ],
+         "Customize": [
+            "自定义"
+         ],
+         "List Annotation Layer": [
+            "注解层列表"
+         ],
+         "List Annotation": [
+            "注解"
+         ],
+         "List Query": [
+            "历史查询"
+         ],
+         "Logs": [
+            "操作日志"
+         ],
+         "Dashboard Id": [
+            "仪表板Id"
+         ],
+         "Duration Ms": [
+            "持续时间（ms)"
+         ],
+         "Referrer": [
+            "引用者"
+         ],
+         "Slice Id": [
+            "切片Id"
+         ],
+         "Show Log": [
+            "日志详情"
+         ],
+         "Autocomplete": [
+            "自动补全"
+         ],
+         "Close tab": [
+            "关闭"
+         ],
+         "Rename tab": [
+            "重命名"
+         ],
+         "querylink": [
+            "查询链接"
+         ],
+         "Hide tool bar": [
+            "隐藏工具栏"
+         ],
+         "Close all other tabs": [
+            "关闭其他标签"
+         ],
+         "Expand tool bar": [
+            "展开工具栏"
+         ],
+         "Duplicate tab": [
+            "复制"
+         ],
+         "See table schema": [
+            "查看表结构"
+         ],
+         "Select table or type table name": [
+            "选择表"
+         ],
+         "Clipboard": [
+            "剪贴板"
+         ],
+         "Filter Results": [
+            "过滤结果"
+         ],
+         "parameters": [
+            "模板参数"
+         ],
+         "-- Note: Unless you save your query, these tabs will NOT persist if you clear your cookies or change browsers.": [
+            "-- 注意: 除非您保存了查询，否则如果您清空了cookie或者更换了浏览器，这些查询不会保留."
+         ],
+         "Keyboard shortcuts": [
+            "快捷键"
+         ],
+         "Key": [
+            "快捷键"
+         ],
+         "Run query": [
+            "执行查询"
+         ],
+         "New tab": [
+            "新建查询"
+         ],
+         "Stop query": [
+            "停止查询"
+         ],
+         "Run query synchronously (Ctrl + Enter)": [
+            "同步执行查询"
+         ],
+         "Ok": [
+            "确定"
+         ],
+         "Reset": [
+            "默认"
+         ],
+         "Preview: `%s`": [
+            "预览: `%s`"
+         ],
+         "Assign a set of parameters as JSON below (example:": [
+            "定义一组JSON格式的参数, 例如: "
+         ],
+         "), and they become available in your SQL (example:": [
+            ", 它们可以在SQL查询中使用, 例如: "
+         ],
+         ") by using": [
+            "), 其使用的是"
+         ],
+         "syntax.": [
+            "语法"
+         ],
+         "Please save the query to enable sharing": [
+            "分享之前请保存查询"
+         ],
+         "Copy SELECT statement to the clipboard": [
+            "拷贝SELECT语句到剪贴板"
+         ],
+         "Force refresh schema list": [
+            "强制刷新schema列表"
+         ],
+         "Force refresh table list": [
+            "强制刷新表列表"
          ]
       }
    }

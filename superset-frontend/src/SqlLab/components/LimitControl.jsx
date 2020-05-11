@@ -110,7 +110,7 @@ export default class LimitControl extends React.PureComponent {
               disabled={!isValid}
               onClick={this.submitAndClose}
             >
-              Ok
+	    {t('Ok')}
             </Button>
             <Button
               bsSize="small"
@@ -120,7 +120,7 @@ export default class LimitControl extends React.PureComponent {
                 this.props.defaultQueryLimit.toString(),
               )}
             >
-              Reset
+	    {t('Reset')}
             </Button>
           </div>
         </div>

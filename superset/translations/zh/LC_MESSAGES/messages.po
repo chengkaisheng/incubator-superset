@@ -3650,7 +3650,7 @@ msgid "Action"
 msgstr "操作"
 
 msgid "dttm"
-msgstr "dttm"
+msgstr "操作时间"
 
 msgid "Action Log"
 msgstr "操作日志"
@@ -4085,3 +4085,125 @@ msgstr "SQL查询"
 msgid "Refresh"
 msgstr "刷新"
 
+msgid "Customize"
+msgstr "自定义"
+
+msgid "List Annotation Layer"
+msgstr "注解层列表"
+
+msgid "List Annotation"
+msgstr "注解"
+
+msgid "List Query"
+msgstr "历史查询"
+
+msgid "Logs"
+msgstr "操作日志"
+
+msgid "Dashboard Id"
+msgstr "仪表板Id"
+
+msgid "Duration Ms"
+msgstr "持续时间（ms)"
+
+msgid "Referrer"
+msgstr "引用者"
+
+msgid "Slice Id"
+msgstr "切片Id"
+
+msgid "Show Log"
+msgstr "日志详情"
+
+msgid "Autocomplete"
+msgstr "自动补全"
+
+msgid "Close tab"
+msgstr "关闭"
+
+msgid "Rename tab"
+msgstr "重命名"
+
+msgid "querylink"
+msgstr "查询链接"
+
+msgid "Hide tool bar"
+msgstr "隐藏工具栏"
+
+msgid "Close all other tabs"
+msgstr "关闭其他标签"
+
+msgid "Expand tool bar"
+msgstr "展开工具栏"
+
+msgid "Duplicate tab"
+msgstr "复制"
+
+msgid "See table schema"
+msgstr "查看表结构"
+
+msgid "Select table or type table name"
+msgstr "选择表"
+
+msgid "Clipboard"
+msgstr "剪贴板"
+
+msgid "Filter Results"
+msgstr "过滤结果"
+
+msgid "parameters"
+msgstr "模板参数"
+
+msgid "-- Note: Unless you save your query, these tabs will NOT persist if you clear your cookies or change browsers."
+msgstr "-- 注意: 除非您保存了查询，否则如果您清空了cookie或者更换了浏览器，这些查询不会保留."
+
+msgid "Keyboard shortcuts"
+msgstr "快捷键"
+
+msgid "Key"
+msgstr "快捷键"
+
+msgid "Run query"
+msgstr "执行查询"
+
+msgid "New tab"
+msgstr "新建查询"
+
+msgid "Stop query"
+msgstr "停止查询"
+
+msgid "Run query synchronously (Ctrl + Enter)"
+msgstr "同步执行查询"
+
+msgid "Ok"
+msgstr "确定"
+
+msgid "Reset"
+msgstr "默认"
+
+msgid "Preview: `%s`"
+msgstr "预览: `%s`"
+
+msgid "Assign a set of parameters as JSON below (example:"
+msgstr "定义一组JSON格式的参数, 例如: "
+
+msgid "), and they become available in your SQL (example:"
+msgstr ", 它们可以在SQL查询中使用, 例如: "
+
+msgid ") by using"
+msgstr "), 其使用的是"
+
+msgid "syntax."
+msgstr "语法"
+
+msgid "Please save the query to enable sharing"
+msgstr "分享之前请保存查询"
+
+msgid "Copy SELECT statement to the clipboard"
+msgstr "拷贝SELECT语句到剪贴板"
+
+msgid "Force refresh schema list"
+msgstr "强制刷新schema列表"
+
+msgid "Force refresh table list"
+msgstr "强制刷新表列表"

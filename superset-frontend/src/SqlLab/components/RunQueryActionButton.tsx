@@ -65,7 +65,7 @@ const RunQueryActionButton = ({
         {...commonBtnProps}
         onClick={() => runQuery(true)}
         key="run-async-btn"
-        tooltip={t('Run query asynchronously (Ctrl + ↵)')}
+        tooltip={t('Run query asynchronously (Ctrl + Enter)')}
         disabled={!sql.trim()}
       >
         <i className="fa fa-table" /> {runBtnText}
@@ -77,7 +77,7 @@ const RunQueryActionButton = ({
       {...commonBtnProps}
       onClick={() => runQuery(false)}
       key="run-btn"
-      tooltip={t('Run query synchronously (Ctrl + ↵)')}
+      tooltip={t('Run query synchronously (Ctrl + Enter)')}
       disabled={!sql.trim()}
     >
       <i className="fa fa-refresh" /> {runBtnText}
