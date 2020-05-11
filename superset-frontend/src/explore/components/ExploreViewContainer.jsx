@@ -360,7 +360,7 @@ class ExploreViewContainer extends React.Component {
               />
               <div className="m-l-5 text-muted">
                 <Hotkeys
-                  header="Keyboard shortcuts"
+                  header={t("Keyboard shortcuts")}
                   hotkeys={getHotKeys()}
                   placement="right"
                 />

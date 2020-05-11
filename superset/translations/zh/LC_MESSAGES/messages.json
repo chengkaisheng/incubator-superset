@@ -476,10 +476,10 @@
             "搜索结果"
          ],
          "[From]-": [
-            "[From]-"
+            "[从]-"
          ],
          "[To]-": [
-            "[To]-"
+            "[到]-"
          ],
          "[Query Status]": [
             "[查询状态]"
@@ -3693,6 +3693,63 @@
          ],
          "Force refresh table list": [
             "强制刷新表列表"
+         ],
+         "Filter by user": [
+            "按用户过滤"
+         ],
+         "Filter by database": [
+            "按照数据库过滤"
+         ],
+         "Query search string": [
+            "查询搜索字符串"
+         ],
+         "Filter by status": [
+            "按照状态过滤"
+         ],
+         "Data": [
+            "数据"
+         ],
+         "Expand/collapse datasource configuration": [
+            "展开/折叠数据源配置"
+         ],
+         "Time Comparison": [
+            "时间比较"
+         ],
+         "Python Functions": [
+            "Python函数"
+         ],
+         "Rolling Window": [
+            "滚动窗口"
+         ],
+         "Rolling Function": [
+            "滚动函数"
+         ],
+         "Calculation type": [
+            "计算类型"
+         ],
+         "Rule": [
+            "规则"
+         ],
+         "Method": [
+            "方法"
+         ],
+         "Pandas resample method": [
+            "Pandas重新采样方法"
+         ],
+         "View query": [
+            "查看SQL"
+         ],
+         "View results": [
+            "查看结果"
+         ],
+         "View samples": [
+            "抽样查看"
+         ],
+         "Run in SQL Lab": [
+            "在SQL Lab中运行"
+         ],
+         "Select Dashboard": [
+            "选择仪表盘"
          ]
       }
    }

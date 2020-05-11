@@ -20,7 +20,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Button, Panel } from 'react-bootstrap';
 import Select from 'react-virtualized-select';
-import { t } from '@superset-ui/translation';
+import { t, tn } from '@superset-ui/translation';
 
 import VizTypeControl from '../explore/components/controls/VizTypeControl';
 

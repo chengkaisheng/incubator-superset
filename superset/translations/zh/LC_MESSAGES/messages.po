@@ -518,10 +518,10 @@ msgid "Search Results"
 msgstr "搜索结果"
 
 msgid "[From]-"
-msgstr "[From]-"
+msgstr "[从]-"
 
 msgid "[To]-"
-msgstr "[To]-"
+msgstr "[到]-"
 
 msgid "[Query Status]"
 msgstr "[查询状态]"
@@ -4207,3 +4207,72 @@ msgstr "强制刷新schema列表"
 
 msgid "Force refresh table list"
 msgstr "强制刷新表列表"
+
+msgid "Filter by user"
+msgstr "按用户过滤"
+
+msgid "Filter by database"
+msgstr "按照数据库过滤"
+
+msgid "Query search string"
+msgstr "查询搜索字符串"
+
+msgid "Filter by status"
+msgstr "按照状态过滤"
+
+msgid "Data"
+msgstr "数据"
+
+msgid "Stop"
+msgstr "停止"
+
+msgid "Save"
+msgstr "保存"
+
+msgid "Expand/collapse datasource configuration"
+msgstr "展开/折叠数据源配置"
+
+msgid "Columns"
+msgstr "列"
+
+msgid "Metric"
+msgstr "指标"
+
+msgid "Time Comparison"
+msgstr "时间比较"
+
+msgid "Python Functions"
+msgstr "Python函数"
+
+msgid "Rolling Window"
+msgstr "滚动窗口"
+
+msgid "Rolling Function"
+msgstr "滚动函数"
+
+msgid "Calculation type"
+msgstr "计算类型"
+
+msgid "Rule"
+msgstr "规则"
+
+msgid "Method"
+msgstr "方法"
+
+msgid "Pandas resample method"
+msgstr "Pandas重新采样方法"
+
+msgid "View query"
+msgstr "查看SQL"
+
+msgid "View results"
+msgstr "查看结果"
+
+msgid "View samples"
+msgstr "抽样查看"
+
+msgid "Run in SQL Lab"
+msgstr "在SQL Lab中运行"
+
+msgid "Select Dashboard"
+msgstr "选择仪表盘"
