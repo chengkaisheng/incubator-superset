@@ -127,7 +127,7 @@ class TableNotFoundValidationError(ValidationError):
     def __init__(self, table_name: str) -> None:
         super().__init__(
             _(
-                f"Table [{table_name}] could not be found, "
+                f"Table [table_name] could not be found, "
                 "please double check your "
                 "database connection, schema, and "
                 f"table name"

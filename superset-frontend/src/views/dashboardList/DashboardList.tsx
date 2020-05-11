@@ -388,7 +388,7 @@ class DashboardList extends React.PureComponent<Props, State> {
       return this.setState({
         filters: [
           {
-            Header: 'Owner',
+            Header: t('Owner'),
             id: 'owners',
             input: 'select',
             operator: 'rel_m_m',
@@ -396,7 +396,7 @@ class DashboardList extends React.PureComponent<Props, State> {
             selects: owners.map(({ text: label, value }) => ({ label, value })),
           },
           {
-            Header: 'Published',
+            Header: t('Published'),
             id: 'published',
             input: 'select',
             operator: 'eq',
@@ -407,7 +407,7 @@ class DashboardList extends React.PureComponent<Props, State> {
             ],
           },
           {
-            Header: 'Search',
+            Header: t('Search'),
             id: 'dashboard_title',
             input: 'search',
             operator: 'title_or_slug',
@@ -427,24 +427,24 @@ class DashboardList extends React.PureComponent<Props, State> {
     return this.setState({
       filters: [
         {
-          Header: 'Dashboard',
+          Header: t('Dashboard'),
           id: 'dashboard_title',
           operators: filterOperators.dashboard_title.map(convertFilter),
         },
         {
-          Header: 'Slug',
+          Header: t('Slug'),
           id: 'slug',
           operators: filterOperators.slug.map(convertFilter),
         },
         {
-          Header: 'Owners',
+          Header: t('Owners'),
           id: 'owners',
           input: 'select',
           operators: filterOperators.owners.map(convertFilter),
           selects: owners.map(({ text: label, value }) => ({ label, value })),
         },
         {
-          Header: 'Published',
+          Header: t('Published'),
           id: 'published',
           input: 'checkbox',
           operators: filterOperators.published.map(convertFilter),
