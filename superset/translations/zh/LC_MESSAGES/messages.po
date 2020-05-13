@@ -1497,7 +1497,7 @@ msgid ""
 msgstr "限制显示的时间序列的数量。应用子查询（或者不支持子查询）来限制获取和显示的时间序列的数量。在高基数维度（S）分组时，此特性是有用的。"
 
 msgid "Sort By"
-msgstr "Sort By（以什么排序）"
+msgstr "排序"
 
 msgid "Metric used to define the top series"
 msgstr "用于定义顶级序列的指标"
@@ -4071,7 +4071,7 @@ msgid "New"
 msgstr "新建"
 
 msgid "Create a new chart"
-msgstr "创建新图表"
+msgstr "创建一个新图表"
 
 msgid "Determines whether or not this dashboard is visible in the list of all dashboards"
 msgstr "决定该仪表盘是否可以在看板列表中显示"
@@ -4169,9 +4169,6 @@ msgstr "执行查询"
 msgid "New tab"
 msgstr "新建查询"
 
-msgid "Stop query"
-msgstr "停止查询"
-
 msgid "Run query synchronously (Ctrl + Enter)"
 msgstr "同步执行查询"
 
@@ -4223,24 +4220,6 @@ msgstr "按照状态过滤"
 msgid "Data"
 msgstr "数据"
 
-msgid "Stop"
-msgstr "停止"
-
-msgid "Save"
-msgstr "保存"
-
-msgid "Expand/collapse datasource configuration"
-msgstr "展开/折叠数据源配置"
-
-msgid "Columns"
-msgstr "列"
-
-msgid "Metric"
-msgstr "指标"
-
-msgid "Time Comparison"
-msgstr "时间比较"
-
 msgid "Python Functions"
 msgstr "Python函数"
 
@@ -4276,3 +4255,226 @@ msgstr "在SQL Lab中运行"
 
 msgid "Select Dashboard"
 msgstr "选择仪表盘"
+
+msgid "Time Range"
+msgstr "时间范围"
+
+msgid "Last week"
+msgstr "上周"
+
+msgid "Relative to today"
+msgstr "相对于今天"
+
+msgid "Defaults"
+msgstr "默认"
+
+msgid "Custom"
+msgstr "自定义"
+
+msgid "Start / end"
+msgstr "开始 / 结束"
+
+msgid "Superset supports smart date parsing. Strings like `last sunday` or `last october` can be used."
+msgstr "支持智能日期解析，可以使用像`last sunday`或者`last october`这种时间字符串·"
+
+msgid ""
+"The time range for the visualization. All relative times, e.g. 'Last month', "
+"'Last 7 days', 'now', etc. are evaluated on the server using the server's "
+"local time (sans timezone). All tooltips and placeholder times are expressed "
+"in UTC (sans timezone). The timestamps are then evaluated by the database "
+"using the engine's local timezone. Note one can explicitly set the timezone "
+"per the ISO 8601 format if specifying either the start and/or end time."
+msgstr "视图的时间范围。所有的相对时间，如：'Last month', 'Last 7 days', 'now'会用服务器的本地时间来计算"
+
+msgid "Expand/collapse datasource configuration"
+msgstr "打开/折叠数据源配置"
+
+msgid "Propagate"
+msgstr "传播"
+
+msgid "Send range filter events to other charts"
+msgstr "将范围过滤器应用到其他图表"
+
+msgid "The way the ticks are laid out on the X-axis"
+msgstr "X轴坐标分布方式"
+
+msgid "D3 format syntax: https://github.com/d3/d3-format"
+msgstr "D3格式语法：https://github.com/d3/d3-format"
+
+msgid "Whether to display the min and max values of the X-axis"
+msgstr "是否显示X轴最大最小值"
+
+msgid "Whether to display the min and max values of the Y-axis"
+msgstr "是否显示Y轴最大最小值"
+
+msgid "Use a log scale for the Y-axis"
+msgstr "用log来表示Y轴数据"
+
+msgid ""
+"Bounds for the Y-axis. When left empty, the bounds are "
+"dynamically defined based on the min/max of the data. Note that "
+"this feature will only expand the axis range. It won't "
+"narrow the data's extent."
+msgstr "Y轴取值范围。为空时根据数据的最大最小值自动设置。"
+
+msgid "Time Comparison"
+msgstr "时间比较"
+
+msgid "Bad formula."
+msgstr "错误的公式"
+
+msgid "Formula"
+msgstr "公式"
+
+msgid "Expects a formula with depending time parameter 'x' in milliseconds since epoch. mathjs is used to evaluate the formulas. Example: '2x+5'"
+msgstr "期望一个包含x参数的公式，x为从epoc开始的毫秒数。mathjs会用来计算公式。例如：2x+5"
+
+msgid "Annotation Source"
+msgstr "注解来源"
+
+msgid "Choose the source of your annotations"
+msgstr "选择您注解的来源"
+
+msgid "Automatic Color"
+msgstr "随机颜色"
+
+msgid "Edit Annotation Layer"
+msgstr "编辑注解层"
+
+msgid "Remove"
+msgstr "移除"
+
+msgid "Explore the result set in the data exploration view"
+msgstr "在数据探索视图中查看结果集"
+
+msgid "Overwrite text in the editor with a query on this table"
+msgstr "用对该表的另外查询重写编辑器中的查询语句"
+
+msgid "Explore"
+msgstr "探索"
+
+msgid "click to edit"
+msgstr "点击编辑"
+
+msgid "Edit Chart Properties"
+msgstr "编辑图表属性"
+
+msgid "Basic Information"
+msgstr "基本信息"
+
+msgid "Configuration"
+msgstr "配置"
+
+msgid "Access"
+msgstr "访问权限"
+
+msgid "The description can be displayed as widget headers in the dashboard view. Supports markdown."
+msgstr "该描述可以再仪表板视图中作为组件的header显示. 支持markdow."
+
+msgid "A list of users who can alter the chart. Searchable by name or username."
+msgstr "可以修改图表的用户列表。可以通过名字或者用户名查找."
+
+msgid "Bar Chart"
+msgstr "条形图"
+
+msgid "Area Chart"
+msgstr "面积图"
+
+msgid "Line Chart"
+msgstr "折线图"
+
+msgid "Time-series Bar Chart"
+msgstr "时间序列条形图"
+
+msgid "Time-series Table"
+msgstr "时间序列表格"
+
+msgid "Time-series Period Pivot"
+msgstr "时间序列周期透视图"
+
+msgid "Dual Line Chart"
+msgstr "双折线图"
+
+msgid "Multiple Line Charts"
+msgstr "多折线图"
+
+msgid "Sunburst Chart"
+msgstr "旭日图"
+
+msgid "Sankey Diagram"
+msgstr "桑基图"
+
+msgid "Horizon Chart"
+msgstr "地平线图"
+
+msgid "Nightingale Rose Chart"
+msgstr "南丁格尔玫瑰图"
+
+msgid "Event Flow"
+msgstr "事件流图"
+
+msgid "Paired t-test Table"
+msgstr "配对t检验表"
+
+msgid "Force-directed Graph"
+msgstr "力导引图"
+
+msgid "Partition Chart"
+msgstr "分区图"
+
+msgid "deck.gl Polygon"
+msgstr "deck.gl多边形图"
+
+msgid "deck.gl Scatterplot"
+msgstr "deck.gl散点图"
+
+msgid "deck.gl Arc"
+msgstr "deck.gl弧形图"
+
+msgid "deck.gl 3D Hexagon"
+msgstr "deck.gl 3D六边形图"
+
+msgid "deck.gl Grid"
+msgstr "deck.gl网格图"
+
+msgid "deck.gl Path"
+msgstr "deck.gl路径图"
+
+msgid "deck.gl Geojson"
+msgstr "deck.gl矢量地图"
+
+msgid "Time-series Percent Change"
+msgstr "时间序列百分比变化图"
+
+msgid "deck.gl Screen Grid" 
+msgstr "deck.gl屏幕网格图"
+
+msgid "deck.gl Multiple Layers"
+msgstr "deck.gl多层次图"
+
+msgid "Datasource Type"
+msgstr "数据源类型" 
+
+msgid "Datasource Id"
+msgstr "数据源Id"
+
+msgid "Created By"
+msgstr "创建者"
+
+msgid "The content here can be displayed as widget headers in the dashboard view. Supports markdown."
+msgstr "这里的内容可以作为仪表板视图中组价的header信息. 支持markdown."
+
+msgid "Email Schedules"
+msgstr "邮件计划表"
+
+msgid "Change Datasource"
+msgstr "修改数据源"
+
+msgid "Explore in SQL Lab"
+msgstr "在SQL Lab里查看"
+
+msgid "Edit Datasource"
+msgstr "编辑数据源"
+
+msgid "Click to change the datasource"
+msgstr "点击修改数据源"

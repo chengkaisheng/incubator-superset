@@ -19,6 +19,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import InfoTooltipWithTrigger from './InfoTooltipWithTrigger';
+import { t } from '@superset-ui/translation';
 
 const propTypes = {
   title: PropTypes.string.isRequired,
@@ -38,7 +39,7 @@ export default function PopoverSection({
   return (
     <div className={'PopoverSection ' + (!isSelected ? 'dimmed' : '')}>
       <div onClick={onSelect} className="pointer">
-        <strong>{title}</strong> &nbsp;
+        <strong>{t(title)}</strong> &nbsp;
         {info && (
           <InfoTooltipWithTrigger tooltip={info} label="date-free-tooltip" />
         )}

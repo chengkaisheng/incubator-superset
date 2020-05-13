@@ -86,8 +86,7 @@ const DEFAULT_UNTIL = moment()
   .format(MOMENT_FORMAT);
 const SEPARATOR = ' : ';
 const FREEFORM_TOOLTIP = t(
-  'Superset supports smart date parsing. Strings like `last sunday` or ' +
-    '`last october` can be used.',
+  'Superset supports smart date parsing. Strings like `last sunday` or `last october` can be used.',
 );
 
 const DATE_FILTER_POPOVER_STYLE = { width: '250px' };
@@ -424,10 +423,10 @@ export default class DateFilterControl extends React.Component {
             className="time-filter-tabs"
             onSelect={this.changeTab}
           >
-            <Tab eventKey={1} title="Defaults">
+            <Tab eventKey={1} title={t("Defaults")}>
               <FormGroup>{timeFrames}</FormGroup>
             </Tab>
-            <Tab eventKey={2} title="Custom">
+            <Tab eventKey={2} title={t("Custom")}>
               <FormGroup>
                 <PopoverSection
                   title="Relative to today"
@@ -564,7 +563,7 @@ export default class DateFilterControl extends React.Component {
               bsStyle="primary"
               onClick={this.close}
             >
-              Ok
+	    {t('Ok')}
             </Button>
           </div>
         </div>

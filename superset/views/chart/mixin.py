@@ -55,11 +55,9 @@ class SliceMixin:  # pylint: disable=too-few-public-methods
     ]
     base_order = ("changed_on", "desc")
     description_columns = {
-        "description": Markup(
+        "description": _(
             "The content here can be displayed as widget headers in the "
-            "dashboard view. Supports "
-            '<a href="https://daringfireball.net/projects/markdown/"">'
-            "markdown</a>"
+            "dashboard view. Supports markdown."
         ),
         "params": _(
             "These parameters are generated dynamically when clicking "

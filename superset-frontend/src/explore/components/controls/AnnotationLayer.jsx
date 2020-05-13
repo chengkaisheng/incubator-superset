@@ -367,10 +367,8 @@ export default class AnnotationLayer extends React.PureComponent {
           .join(', ')}]`;
       }
     } else if (annotationType === ANNOTATION_TYPES.FORMULA) {
-      label = 'Formula';
-      description = `Expects a formula with depending time parameter 'x'
-        in milliseconds since epoch. mathjs is used to evaluate the formulas.
-        Example: '2x+5'`;
+      label = t('Formula');
+      description = t("Expects a formula with depending time parameter 'x' in milliseconds since epoch. mathjs is used to evaluate the formulas. Example: '2x+5'");
     }
     if (requiresQuery(sourceType)) {
       return (
@@ -402,7 +400,7 @@ export default class AnnotationLayer extends React.PureComponent {
           value={value}
           onChange={this.handleValue}
           validationErrors={
-            this.isValidFormula(value, annotationType) ? ['Bad formula.'] : []
+            this.isValidFormula(value, annotationType) ? [t('Bad formula.')] : []
           }
         />
       );
@@ -450,7 +448,7 @@ export default class AnnotationLayer extends React.PureComponent {
                     : 'Event Time Column'
                 }
                 description={'This column must contain date/time information.'}
-                validationErrors={!timeColumn ? ['Mandatory'] : []}
+                validationErrors={!timeColumn ? [t('Mandatory')] : []}
                 clearable={false}
                 options={timeColumnOptions}
                 value={timeColumn}
@@ -622,7 +620,7 @@ export default class AnnotationLayer extends React.PureComponent {
               bsSize="xsmall"
               onClick={() => this.setState({ color: AUTOMATIC_COLOR })}
             >
-              Automatic Color
+	    {t('Automatic Color')}
             </Button>
           </div>
         </div>
@@ -708,8 +706,8 @@ export default class AnnotationLayer extends React.PureComponent {
               {!!supportedSourceTypes.length && (
                 <SelectControl
                   hovered
-                  description="Choose the source of your annotations"
-                  label="Annotation Source"
+                  description={t("Choose the source of your annotations")}
+                  label={t("Annotation Source")}
                   name="annotation-source-type"
                   options={supportedSourceTypes}
                   value={sourceType}

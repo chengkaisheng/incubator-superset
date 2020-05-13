@@ -168,7 +168,7 @@ function PropertiesModal({ slice, onHide, onSave }: InternalProps) {
   return (
     <form onSubmit={onSubmit}>
       <Modal.Header closeButton>
-        <Modal.Title>Edit Chart Properties</Modal.Title>
+        <Modal.Title>{t('Edit Chart Properties')}</Modal.Title>
       </Modal.Header>
       <Modal.Body>
         <Row>

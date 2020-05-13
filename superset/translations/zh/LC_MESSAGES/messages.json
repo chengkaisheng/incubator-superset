@@ -1355,7 +1355,7 @@
             "限制显示的时间序列的数量。应用子查询（或者不支持子查询）来限制获取和显示的时间序列的数量。在高基数维度（S）分组时，此特性是有用的。"
          ],
          "Sort By": [
-            "Sort By（以什么排序）"
+            "排序"
          ],
          "Metric used to define the top series": [
             "用于定义顶级序列的指标"
@@ -3557,7 +3557,7 @@
             "新建"
          ],
          "Create a new chart": [
-            "创建新图表"
+            "创建一个新图表"
          ],
          "Determines whether or not this dashboard is visible in the list of all dashboards": [
             "决定该仪表盘是否可以在看板列表中显示"
@@ -3655,9 +3655,6 @@
          "New tab": [
             "新建查询"
          ],
-         "Stop query": [
-            "停止查询"
-         ],
          "Run query synchronously (Ctrl + Enter)": [
             "同步执行查询"
          ],
@@ -3709,12 +3706,6 @@
          "Data": [
             "数据"
          ],
-         "Expand/collapse datasource configuration": [
-            "展开/折叠数据源配置"
-         ],
-         "Time Comparison": [
-            "时间比较"
-         ],
          "Python Functions": [
             "Python函数"
          ],
@@ -3750,6 +3741,219 @@
          ],
          "Select Dashboard": [
             "选择仪表盘"
+         ],
+         "Time Range": [
+            "时间范围"
+         ],
+         "Last week": [
+            "上周"
+         ],
+         "Relative to today": [
+            "相对于今天"
+         ],
+         "Defaults": [
+            "默认"
+         ],
+         "Custom": [
+            "自定义"
+         ],
+         "Start / end": [
+            "开始 / 结束"
+         ],
+         "Superset supports smart date parsing. Strings like `last sunday` or `last october` can be used.": [
+            "支持智能日期解析，可以使用像`last sunday`或者`last october`这种时间字符串·"
+         ],
+         "The time range for the visualization. All relative times, e.g. 'Last month', 'Last 7 days', 'now', etc. are evaluated on the server using the server's local time (sans timezone). All tooltips and placeholder times are expressed in UTC (sans timezone). The timestamps are then evaluated by the database using the engine's local timezone. Note one can explicitly set the timezone per the ISO 8601 format if specifying either the start and/or end time.": [
+            "视图的时间范围。所有的相对时间，如：'Last month', 'Last 7 days', 'now'会用服务器的本地时间来计算"
+         ],
+         "Expand/collapse datasource configuration": [
+            "打开/折叠数据源配置"
+         ],
+         "Propagate": [
+            "传播"
+         ],
+         "Send range filter events to other charts": [
+            "将范围过滤器应用到其他图表"
+         ],
+         "The way the ticks are laid out on the X-axis": [
+            "X轴坐标分布方式"
+         ],
+         "D3 format syntax: https://github.com/d3/d3-format": [
+            "D3格式语法：https://github.com/d3/d3-format"
+         ],
+         "Whether to display the min and max values of the X-axis": [
+            "是否显示X轴最大最小值"
+         ],
+         "Whether to display the min and max values of the Y-axis": [
+            "是否显示Y轴最大最小值"
+         ],
+         "Use a log scale for the Y-axis": [
+            "用log来表示Y轴数据"
+         ],
+         "Bounds for the Y-axis. When left empty, the bounds are dynamically defined based on the min/max of the data. Note that this feature will only expand the axis range. It won't narrow the data's extent.": [
+            "Y轴取值范围。为空时根据数据的最大最小值自动设置。"
+         ],
+         "Time Comparison": [
+            "时间比较"
+         ],
+         "Bad formula.": [
+            "错误的公式"
+         ],
+         "Formula": [
+            "公式"
+         ],
+         "Expects a formula with depending time parameter 'x' in milliseconds since epoch. mathjs is used to evaluate the formulas. Example: '2x+5'": [
+            "期望一个包含x参数的公式，x为从epoc开始的毫秒数。mathjs会用来计算公式。例如：2x+5"
+         ],
+         "Annotation Source": [
+            "注解来源"
+         ],
+         "Choose the source of your annotations": [
+            "选择您注解的来源"
+         ],
+         "Automatic Color": [
+            "随机颜色"
+         ],
+         "Edit Annotation Layer": [
+            "编辑注解层"
+         ],
+         "Remove": [
+            "移除"
+         ],
+         "Explore the result set in the data exploration view": [
+            "在数据探索视图中查看结果集"
+         ],
+         "Overwrite text in the editor with a query on this table": [
+            "用对该表的另外查询重写编辑器中的查询语句"
+         ],
+         "Explore": [
+            "探索"
+         ],
+         "click to edit": [
+            "点击编辑"
+         ],
+         "Edit Chart Properties": [
+            "编辑图表属性"
+         ],
+         "Basic Information": [
+            "基本信息"
+         ],
+         "Configuration": [
+            "配置"
+         ],
+         "Access": [
+            "访问权限"
+         ],
+         "The description can be displayed as widget headers in the dashboard view. Supports markdown.": [
+            "该描述可以再仪表板视图中作为组件的header显示. 支持markdow."
+         ],
+         "A list of users who can alter the chart. Searchable by name or username.": [
+            "可以修改图表的用户列表。可以通过名字或者用户名查找."
+         ],
+         "Bar Chart": [
+            "条形图"
+         ],
+         "Area Chart": [
+            "面积图"
+         ],
+         "Line Chart": [
+            "折线图"
+         ],
+         "Time-series Bar Chart": [
+            "时间序列条形图"
+         ],
+         "Time-series Table": [
+            "时间序列表格"
+         ],
+         "Time-series Period Pivot": [
+            "时间序列周期透视图"
+         ],
+         "Dual Line Chart": [
+            "双折线图"
+         ],
+         "Multiple Line Charts": [
+            "多折线图"
+         ],
+         "Sunburst Chart": [
+            "旭日图"
+         ],
+         "Sankey Diagram": [
+            "桑基图"
+         ],
+         "Horizon Chart": [
+            "地平线图"
+         ],
+         "Nightingale Rose Chart": [
+            "南丁格尔玫瑰图"
+         ],
+         "Event Flow": [
+            "事件流图"
+         ],
+         "Paired t-test Table": [
+            "配对t检验表"
+         ],
+         "Force-directed Graph": [
+            "力导引图"
+         ],
+         "Partition Chart": [
+            "分区图"
+         ],
+         "deck.gl Polygon": [
+            "deck.gl多边形图"
+         ],
+         "deck.gl Scatterplot": [
+            "deck.gl散点图"
+         ],
+         "deck.gl Arc": [
+            "deck.gl弧形图"
+         ],
+         "deck.gl 3D Hexagon": [
+            "deck.gl 3D六边形图"
+         ],
+         "deck.gl Grid": [
+            "deck.gl网格图"
+         ],
+         "deck.gl Path": [
+            "deck.gl路径图"
+         ],
+         "deck.gl Geojson": [
+            "deck.gl矢量地图"
+         ],
+         "Time-series Percent Change": [
+            "时间序列百分比变化图"
+         ],
+         "deck.gl Screen Grid": [
+            "deck.gl屏幕网格图"
+         ],
+         "deck.gl Multiple Layers": [
+            "deck.gl多层次图"
+         ],
+         "Datasource Type": [
+            "数据源类型"
+         ],
+         "Datasource Id": [
+            "数据源Id"
+         ],
+         "Created By": [
+            "创建者"
+         ],
+         "The content here can be displayed as widget headers in the dashboard view. Supports markdown.": [
+            "这里的内容可以作为仪表板视图中组价的header信息. 支持markdown."
+         ],
+         "Email Schedules": [
+            "邮件计划表"
+         ],
+         "Change Datasource": [
+            "修改数据源"
+         ],
+         "Explore in SQL Lab": [
+            "在SQL Lab里查看"
+         ],
+         "Edit Datasource": [
+            "编辑数据源"
+         ],
+         "Click to change the datasource": [
+            "点击修改数据源"
          ]
       }
    }
