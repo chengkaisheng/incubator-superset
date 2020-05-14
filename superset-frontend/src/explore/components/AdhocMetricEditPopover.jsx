@@ -254,17 +254,17 @@ export default class AdhocMetricEditPopover extends React.Component {
           <Tab
             className="adhoc-metric-edit-tab"
             eventKey={EXPRESSION_TYPES.SIMPLE}
-            title="Simple"
+            title={t("Simple")}
           >
             <FormGroup>
               <ControlLabel>
-                <strong>column</strong>
+                <strong>{t('column')}</strong>
               </ControlLabel>
               <OnPasteSelect {...this.selectProps} {...columnSelectProps} />
             </FormGroup>
             <FormGroup>
               <ControlLabel>
-                <strong>aggregate</strong>
+                <strong>{t('aggregate')}</strong>
               </ControlLabel>
               <OnPasteSelect
                 autoFocus
@@ -276,7 +276,7 @@ export default class AdhocMetricEditPopover extends React.Component {
           <Tab
             className="adhoc-metric-edit-tab"
             eventKey={EXPRESSION_TYPES.SQL}
-            title="Custom SQL"
+            title={t("Custom SQL")}
           >
             {this.props.datasourceType !== 'druid' ? (
               <FormGroup>
@@ -299,7 +299,7 @@ export default class AdhocMetricEditPopover extends React.Component {
               </FormGroup>
             ) : (
               <div className="custom-sql-disabled-message">
-                Custom SQL Metrics are not available on druid datasources
+		    {t('Custom SQL Metrics are not available on druid datasources')}
               </div>
             )}
           </Tab>
@@ -312,10 +312,10 @@ export default class AdhocMetricEditPopover extends React.Component {
             className="m-r-5"
             onClick={this.onSave}
           >
-            Save
+	    {t('Save')}
           </Button>
           <Button bsSize="small" onClick={this.props.onClose}>
-            Close
+	    {t('Close')}
           </Button>
           <i
             onMouseDown={this.onDragDown}

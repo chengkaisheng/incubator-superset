@@ -19,6 +19,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Button, Popover, Tab, Tabs } from 'react-bootstrap';
+import { t } from '@superset-ui/translation';
 
 import columnType from '../propTypes/columnType';
 import adhocMetricType from '../propTypes/adhocMetricType';
@@ -136,7 +137,7 @@ export default class AdhocFilterEditPopover extends React.Component {
           <Tab
             className="adhoc-filter-edit-tab"
             eventKey={EXPRESSION_TYPES.SIMPLE}
-            title="Simple"
+            title={t("Simple")}
           >
             <AdhocFilterEditPopoverSimpleTabContent
               adhocFilter={this.state.adhocFilter}
@@ -149,7 +150,7 @@ export default class AdhocFilterEditPopover extends React.Component {
           <Tab
             className="adhoc-filter-edit-tab"
             eventKey={EXPRESSION_TYPES.SQL}
-            title="Custom SQL"
+            title={t("Custom SQL")}
           >
             {!this.props.datasource ||
             this.props.datasource.type !== 'druid' ? (

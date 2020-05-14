@@ -72,11 +72,14 @@ class AnnotationModelView(
         "end_dttm": _("End Dttm"),
         "long_descr": _("Long Descr"),
         "json_metadata": _("JSON Metadata"),
+        "created_by": _("Created By"),
+        "changed_by": _("Changed By"),
+        "created_on": _("Created On"),
+        "changed_on": _("Changed On"),
     }
 
     description_columns = {
-        "json_metadata": "This JSON represents any additional metadata this \
-         annotation needs to add more context."
+        "json_metadata": _("This JSON represents any additional metadata this annotation needs to add more context.")
     }
 
     validators_columns = {"start_dttm": [StartEndDttmValidator()]}
@@ -106,4 +109,12 @@ class AnnotationLayerModelView(
     edit_columns = ["name", "descr"]
     add_columns = edit_columns
 
-    label_columns = {"name": _("Name"), "descr": _("Description")}
+    label_columns = {
+            "name": _("Name"),
+            "descr": _("Description"),
+            "created_by": _("Created By"),
+            "created_on": _("Created On"),
+            "changed_by": _("Changed By"),
+            "changed_on": _("Changed On"),
+            "annotation": _("Annotation"),
+    }

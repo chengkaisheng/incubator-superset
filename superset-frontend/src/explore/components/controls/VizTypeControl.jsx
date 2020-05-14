@@ -204,7 +204,7 @@ export default class VizTypeControl extends React.PureComponent {
             {!registry.has(value) && (
               <div className="text-danger">
                 <i className="fa fa-exclamation-circle text-danger" />{' '}
-                <small>{t('This visualization type is not supported.')}</small>
+                <small>{t('不支持该图表类型')}</small>
               </div>
             )}
           </>
@@ -217,7 +217,7 @@ export default class VizTypeControl extends React.PureComponent {
           bsSize="lg"
         >
           <Modal.Header closeButton>
-            <Modal.Title>{t('Select a visualization type')}</Modal.Title>
+            <Modal.Title>{t('选择一个可视化类型')}</Modal.Title>
           </Modal.Header>
           <Modal.Body>
             <div className="viztype-control-search-box">
@@ -225,7 +225,7 @@ export default class VizTypeControl extends React.PureComponent {
                 inputRef={this.setSearchRef}
                 type="text"
                 value={filter}
-                placeholder={t('Search')}
+                placeholder={t('查找')}
                 onChange={this.changeSearch}
               />
             </div>

@@ -20,6 +20,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { FormControl, OverlayTrigger, Tooltip } from 'react-bootstrap';
 import AdhocMetric from '../AdhocMetric';
+import { t } from '@superset-ui/translation';
 
 const propTypes = {
   adhocMetric: PropTypes.instanceOf(AdhocMetric),
@@ -89,7 +90,7 @@ export default class AdhocMetricEditPopoverTitle extends React.Component {
           />
         ) : (
           <span className="inline-editable">
-            {adhocMetric.hasCustomLabel ? adhocMetric.label : 'My Metric'}
+            {adhocMetric.hasCustomLabel ? adhocMetric.label : t('My Metric')}
             &nbsp;
             <i
               className="fa fa-pencil"

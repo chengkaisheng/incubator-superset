@@ -3345,7 +3345,7 @@ msgid "No records found"
 msgstr "没有找到任何记录"
 
 msgid "Import dashboards"
-msgstr "仪表盘导入"
+msgstr "导入仪表盘"
 
 msgid "No Access!"
 msgstr "不能访问!"
@@ -3497,7 +3497,7 @@ msgid "Creator"
 msgstr "作者"
 
 msgid "SQLAlchemy URI"
-msgstr "SQLAlchemy URI"
+msgstr "SQLAlchemy地址"
 
 msgid "Extra"
 msgstr "扩展"
@@ -4478,3 +4478,247 @@ msgstr "编辑数据源"
 
 msgid "Click to change the datasource"
 msgstr "点击修改数据源"
+
+msgid "My Metric"
+msgstr "我的指标"
+
+msgid "Custom SQL"
+msgstr "自定义SQL"
+
+msgid "Simple"
+msgstr "简单"
+
+msgid "Close"
+msgstr "关闭"
+
+msgid "Custom SQL Metrics are not available on druid datasources"
+msgstr "不支持druid数据源的自定义SQL指标"
+
+msgid "column"
+msgstr "列"
+
+msgid "aggregate"
+msgstr "聚合方法"
+
+msgid "OK"
+msgstr "确定"
+
+msgid "Add Annotation"
+msgstr "添加注解"
+
+msgid "Short Descr"
+msgstr "简单描述"
+
+msgid "Long Descr"
+msgstr "详细描述"
+
+msgid "Start Dttm"
+msgstr "开始时间"
+
+msgid "End Dttm"
+msgstr "结束时间"
+
+msgid "Layer"
+msgstr "注解层"
+
+msgid "Add CSS Template"
+msgstr "添加CSS模板"
+
+msgid "Choose File"
+msgstr "选择文件"
+
+msgid "Upload"
+msgstr "上传"
+
+msgid "Changed On"
+msgstr "修改日期"
+
+msgid "Allow Multi Schema Metadata Fetch"
+msgstr "允许多数据库元数据获取"
+
+msgid "Secure Extra"
+msgstr "额外的安全信息"
+
+msgid "Root certificate"
+msgstr "根证书"
+
+msgid "Optional CA_BUNDLE contents to validate HTTPS requests. Only available on certain database engines."
+msgstr "可选的CA_BUNDLE内容用以验证HTTPS请求。只可用在特定的数据库引擎."
+
+msgid "Refer to the SqlAlchemy docsfor more information on how to structure your URI."
+msgstr "请参考SqlAlchemy文档来构建您的URI"
+
+msgid ""
+"JSON string containing additional connection configuration.<br/>"
+"This is used to provide connection information for systems like "
+"Hive, Presto, and BigQuery, which do not conform to the username:password "
+"syntax normally used by SQLAlchemy."
+msgstr "设置JSON字符串用以包含额外的链接配置。<br/>旨在为像Hive，Presto和BigQuery这样的不遵循SQLAlchemy 用户名:密码 校验语法的系统提供连接安全信息。"
+
+msgid ""
+"JSON string containing extra configuration elements.<br/>"
+"1. The ``engine_params`` object gets unpacked into the "
+"[sqlalchemy.create_engine]"
+"call, while the ``metadata_params`` "
+"gets unpacked into the [sqlalchemy.MetaData] call.<br/>"
+"2. The ``metadata_cache_timeout`` is a cache timeout setting "
+"in seconds for metadata fetch of this database. Specify it as "
+"\"metadata_cache_timeout\": {\"schema_cache_timeout\": 600," 
+"\"table_cache_timeout\": 600}. "
+"If unset, cache will not be enabled for the functionality. "
+"A timeout of 0 indicates that the cache never expires.<br/>"
+"3. The ``schemas_allowed_for_csv_upload`` is a comma separated list "
+"of schemas that CSVs are allowed to upload to. "
+"Specify it as \"schemas_allowed_for_csv_upload\": "
+"[\"public\", \"csv_upload\"]. "
+"If database flavor does not support schema or any schema is allowed "
+"to be accessed, just leave the list empty.<br>"
+"4. the ``version`` field is a string specifying the this db's version. "
+"This should be used with Presto DBs so that the syntax is correct."
+msgstr "JSON字符串，包含其他配置元素.<br/>"
+"1. ``engine_params``对象会作为[sqlalchemy.create_engine]调用的传入参数, ``metadata_params``会作为[sqlalchemy.MetaData]调用的传入参数.<br/>"
+"2. ``metadata_cache_timeout``是该数据库元数据信息获取的缓存超时设置, 单位秒. 如："
+"\"metadata_cache_timeout\": {\"schema_cache_timeout\": 600," 
+"\"table_cache_timeout\": 600}. "
+"如果取消设置，cache不会启用. 超时时间设为0表示缓存永远不会超时.<br/>"
+"3. ``schemas_allowed_for_csv_upload``为逗号分割的schemas，这些schemas允许CSV文件上传."
+"如：\"schemas_allowed_for_csv_upload\": [\"public\", \"csv_upload\"]. 如果数据库不支持schema或者不允许schema上传CSV文件，将参数设为空即可.<br>"
+"4. ``version``字段指定Presto数据库的版本以保证数语法的准确性."
+
+msgid "No row selected"
+msgstr "未选中记录"
+
+msgid ""
+"a valid, *non-aggregating* SQL expression as supported by the "
+"underlying backend. Example: `substr(name, 1, 1)`"
+msgstr "有效的, *非聚合*的SQL表达式. 如: `substr(name, 1, 1)`"
+
+msgid ""
+"The pattern of timestamp format. For strings use "
+"python datetime string pattern expression which needs to "
+"adhere to the "
+"ISO 8601 standard to ensure that the lexicographical ordering "
+"coincides with the chronological ordering. If the timestamp "
+"format does not adhere to the ISO 8601 standard you will need to "
+"define an expression and type for transforming the string into a "
+"date or timestamp. Note currently time zones are not supported. "
+"If time is stored in epoch format, put `epoch_s` or `epoch_ms`."
+"If no pattern is specified we fall back to using the optional "
+"defaults on a per database/column name level via the extra parameter."
+msgstr "时间戳格式. 对于字符串，请使用Python的 datetime字符串表达式, 其需要准守ISO 8601标准以保证"
+"按照字符顺序排序和按照时间顺序是一致的. 如果不遵循ISO 8601标准, 您需要定义转换表达式将字符串转换"
+"为date或者timestamp. 需要注意的是目前不支持时区设置. 如果不指定格式，则会在数据库/字段级别通过额"
+"外的参数指定可选的默认格式"
+
+msgid ""
+"a valid, *aggregating* SQL expression as supported by the "
+"underlying backend. Example: `count(DISTINCT userid)`"
+msgstr "有效的, *聚合*SQL表达式. 如: `count(DISTINCT userid)`"
+
+msgid ""
+"d3 formatting string as defined [here]"
+"(https://github.com/d3/d3-format/blob/master/README.md#format). "
+"For instance, this default formatting applies in the Table "
+"visualization and allow for different metric to use different "
+"formats"
+msgstr "d3格式字符串[定义](https://github.com/d3/d3-format/blob/master/README.md#format)."
+"例如, 默认格式适用于图表可视化且允许不同的指标使用不同的格式."
+
+msgid "Only `SELECT` statements are allowed against this database"
+msgstr "对该数据库目前只允许`SELECT`语句"
+
+msgid "Perm"
+msgstr "权限"
+
+msgid "Annotation"
+msgstr "注解"
+
+msgid "Extra Json"
+msgstr "额外的Json"
+
+msgid "Client Id"
+msgstr "客户端ID"
+
+msgid "Tmp Table Name"
+msgstr "临时表"
+
+msgid "Tmp Schema Name"
+msgstr "临时Schema"
+
+msgid "Tab Name"
+msgstr "标签名字"
+
+msgid "Sql Editor Id"
+msgstr "Sql编辑器ID"
+
+msgid "Select Sql"
+msgstr "Select语句"
+
+msgid "Executed Sql"
+msgstr "已执行Sql"
+
+msgid "Progress"
+msgstr "进度"
+
+msgid "Rows"
+msgstr "行数"
+
+msgid "Error Message"
+msgstr "错误信息"
+
+msgid "Results Key"
+msgstr "结果Key"
+
+msgid "Tracking Url"
+msgstr "Url链接"
+
+msgid "Start Running Time"
+msgstr "开始运行时间"
+
+msgid "End Result Backend Time"
+msgstr "后端结束时间"
+
+msgid "Sql"
+msgstr "Sql语句"
+
+msgid "Limit"
+msgstr "限制条数"
+
+msgid "Show Query"
+msgstr "查询明细"
+
+msgid "Show CSS Template"
+msgstr "CSS模板详情"
+
+msgid "Edit CSS Template"
+msgstr "编辑CSS模板"
+
+msgid "Schema Perm"
+msgstr "Schema权限"
+
+msgid "undefined rows"
+msgstr "未定义的行数"
+
+msgid "It's not a good policy to remove a user, just make it inactive"
+msgstr "最好不要删除用户, 一般让他不激活就可以了"
+
+msgid "Created"
+msgstr "已创建的"
+
+msgid "Changed"
+msgstr "已修改的"
+
+msgid "Show Annotation Layer"
+msgstr "显示注释层"
+
+msgid "This JSON represents any additional metadata this annotation needs to add more context."
+msgstr "该JSON表示当前注解需要的额外的元数据信息以提供更多的上下文信息"
+
+msgid "annotation start time or end time is required."
+msgstr "需要指定注解的起始或者结束时间"
+
+msgid "Show Annotation"
+msgstr "显示注解"
+
+msgid "Edit Annotation"
+msgstr "编辑注解"

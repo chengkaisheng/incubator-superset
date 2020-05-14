@@ -99,18 +99,18 @@ class TableColumnInlineView(CompactCRUDMixin, SupersetModelView):
             "users should not need to alter this."
         ),
         "expression": utils.markdown(
+            _(
             "a valid, *non-aggregating* SQL expression as supported by the "
-            "underlying backend. Example: `substr(name, 1, 1)`",
+            "underlying backend. Example: `substr(name, 1, 1)`"),
             True,
         ),
         "python_date_format": utils.markdown(
             Markup(
+                _(
                 "The pattern of timestamp format. For strings use "
-                '<a href="https://docs.python.org/2/library/'
-                'datetime.html#strftime-strptime-behavior">'
-                "python datetime string pattern</a> expression which needs to "
-                'adhere to the <a href="https://en.wikipedia.org/wiki/ISO_8601">'
-                "ISO 8601</a> standard to ensure that the lexicographical ordering "
+                "python datetime string pattern expression which needs to "
+                "adhere to the "
+                "ISO 8601 standard to ensure that the lexicographical ordering "
                 "coincides with the chronological ordering. If the timestamp "
                 "format does not adhere to the ISO 8601 standard you will need to "
                 "define an expression and type for transforming the string into a "
@@ -118,7 +118,7 @@ class TableColumnInlineView(CompactCRUDMixin, SupersetModelView):
                 "If time is stored in epoch format, put `epoch_s` or `epoch_ms`."
                 "If no pattern is specified we fall back to using the optional "
                 "defaults on a per database/column name level via the extra parameter."
-                ""
+                )
             ),
             True,
         ),
@@ -188,16 +188,18 @@ class SqlMetricInlineView(CompactCRUDMixin, SupersetModelView):
     ]
     description_columns = {
         "expression": utils.markdown(
+            _(
             "a valid, *aggregating* SQL expression as supported by the "
-            "underlying backend. Example: `count(DISTINCT userid)`",
+            "underlying backend. Example: `count(DISTINCT userid)`"),
             True,
         ),
         "d3format": utils.markdown(
+            _(
             "d3 formatting string as defined [here]"
             "(https://github.com/d3/d3-format/blob/master/README.md#format). "
             "For instance, this default formatting applies in the Table "
             "visualization and allow for different metric to use different "
-            "formats",
+            "formats"),
             True,
         ),
     }
@@ -366,6 +368,9 @@ class TableModelView(DatasourceModelView, DeleteMixin, YamlExportMixin):
         "is_sqllab_view": _("SQL Lab View"),
         "template_params": _("Template parameters"),
         "modified": _("Modified"),
+        "sql": _("Sql"),
+        "perm": _("Perm"),
+        "table": _("Table")
     }
     edit_form_extra_fields = {
         "database": QuerySelectField(

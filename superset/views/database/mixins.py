@@ -93,11 +93,10 @@ class DatabaseMixin:
     base_order = ("changed_on", "desc")
     description_columns = {
         "sqlalchemy_uri": utils.markdown(
+            _(
             "Refer to the "
-            "[SqlAlchemy docs]"
-            "(https://docs.sqlalchemy.org/en/rel_1_2/core/engines.html#"
-            "database-urls) "
-            "for more information on how to structure your URI.",
+            "SqlAlchemy docs"
+            "for more information on how to structure your URI."),
             True,
         ),
         "expose_in_sqllab": _("Expose this DB in SQL Lab"),
@@ -120,40 +119,37 @@ class DatabaseMixin:
             "this option forces the table to be created in this schema"
         ),
         "extra": utils.markdown(
-            "JSON string containing extra configuration elements.<br/>"
+            _("JSON string containing extra configuration elements.<br/>"
             "1. The ``engine_params`` object gets unpacked into the "
             "[sqlalchemy.create_engine]"
-            "(https://docs.sqlalchemy.org/en/latest/core/engines.html#"
-            "sqlalchemy.create_engine) call, while the ``metadata_params`` "
-            "gets unpacked into the [sqlalchemy.MetaData]"
-            "(https://docs.sqlalchemy.org/en/rel_1_0/core/metadata.html"
-            "#sqlalchemy.schema.MetaData) call.<br/>"
+            "call, while the ``metadata_params`` "
+            "gets unpacked into the [sqlalchemy.MetaData] call.<br/>"
             "2. The ``metadata_cache_timeout`` is a cache timeout setting "
             "in seconds for metadata fetch of this database. Specify it as "
-            '**"metadata_cache_timeout": {"schema_cache_timeout": 600, '
-            '"table_cache_timeout": 600}**. '
+            "\"metadata_cache_timeout\": {\"schema_cache_timeout\": 600," 
+            "\"table_cache_timeout\": 600}. "
             "If unset, cache will not be enabled for the functionality. "
             "A timeout of 0 indicates that the cache never expires.<br/>"
             "3. The ``schemas_allowed_for_csv_upload`` is a comma separated list "
             "of schemas that CSVs are allowed to upload to. "
-            'Specify it as **"schemas_allowed_for_csv_upload": '
-            '["public", "csv_upload"]**. '
+            "Specify it as \"schemas_allowed_for_csv_upload\": "
+            "[\"public\", \"csv_upload\"]. "
             "If database flavor does not support schema or any schema is allowed "
-            "to be accessed, just leave the list empty"
+            "to be accessed, just leave the list empty.<br>"
             "4. the ``version`` field is a string specifying the this db's version. "
-            "This should be used with Presto DBs so that the syntax is correct",
+            "This should be used with Presto DBs so that the syntax is correct."),
             True,
         ),
         "encrypted_extra": utils.markdown(
-            "JSON string containing additional connection configuration.<br/>"
+            _("JSON string containing additional connection configuration.<br/>"
             "This is used to provide connection information for systems like "
             "Hive, Presto, and BigQuery, which do not conform to the username:password "
-            "syntax normally used by SQLAlchemy.",
+            "syntax normally used by SQLAlchemy."),
             True,
         ),
         "server_cert": utils.markdown(
-            "Optional CA_BUNDLE contents to validate HTTPS requests. Only available "
-            "on certain database engines.",
+            _("Optional CA_BUNDLE contents to validate HTTPS requests. Only available "
+            "on certain database engines."),
             True,
         ),
         "impersonate_user": _(
@@ -197,6 +193,12 @@ class DatabaseMixin:
         "modified": _("Modified"),
         "allow_multi_schema_metadata_fetch": _("Allow Multi Schema Metadata Fetch"),
         "backend": _("Backend"),
+        "tables": _("Tables"),
+        "perm": _("Perm"),
+        "created_by": _("Created By"),
+        "created_on": _("Created On"),
+        "changed_by": _("Changed By"),
+        "changed_on": _("Changed On"),
     }
 
     def _pre_add_update(self, database):

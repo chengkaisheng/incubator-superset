@@ -2868,7 +2868,13 @@ class CssTemplateModelView(SupersetModelView, DeleteMixin):
     list_columns = ["template_name"]
     edit_columns = ["template_name", "css"]
     add_columns = edit_columns
-    label_columns = {"template_name": _("Template Name")}
+    label_columns = {
+            "template_name": _("Template Name"),
+            "created_by": _("Created By"),
+            "changed_by": _("Changed By"),
+            "created_on": _("Created On"),
+            "changed_on": _("Changed On"),
+            }
 
 
 class CssTemplateAsyncModelView(CssTemplateModelView):

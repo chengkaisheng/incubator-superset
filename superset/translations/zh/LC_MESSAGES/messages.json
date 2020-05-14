@@ -2984,7 +2984,7 @@
             "没有找到任何记录"
          ],
          "Import dashboards": [
-            "仪表盘导入"
+            "导入仪表盘"
          ],
          "No Access!": [
             "不能访问!"
@@ -3098,7 +3098,7 @@
             "作者"
          ],
          "SQLAlchemy URI": [
-            "SQLAlchemy URI"
+            "SQLAlchemy地址"
          ],
          "Extra": [
             "扩展"
@@ -3954,6 +3954,195 @@
          ],
          "Click to change the datasource": [
             "点击修改数据源"
+         ],
+         "My Metric": [
+            "我的指标"
+         ],
+         "Custom SQL": [
+            "自定义SQL"
+         ],
+         "Simple": [
+            "简单"
+         ],
+         "Close": [
+            "关闭"
+         ],
+         "Custom SQL Metrics are not available on druid datasources": [
+            "不支持druid数据源的自定义SQL指标"
+         ],
+         "column": [
+            "列"
+         ],
+         "aggregate": [
+            "聚合方法"
+         ],
+         "OK": [
+            "确定"
+         ],
+         "Add Annotation": [
+            "添加注解"
+         ],
+         "Short Descr": [
+            "简单描述"
+         ],
+         "Long Descr": [
+            "详细描述"
+         ],
+         "Start Dttm": [
+            "开始时间"
+         ],
+         "End Dttm": [
+            "结束时间"
+         ],
+         "Layer": [
+            "注解层"
+         ],
+         "Add CSS Template": [
+            "添加CSS模板"
+         ],
+         "Choose File": [
+            "选择文件"
+         ],
+         "Upload": [
+            "上传"
+         ],
+         "Changed On": [
+            "修改日期"
+         ],
+         "Allow Multi Schema Metadata Fetch": [
+            "允许多数据库元数据获取"
+         ],
+         "Secure Extra": [
+            "额外的安全信息"
+         ],
+         "Root certificate": [
+            "根证书"
+         ],
+         "Optional CA_BUNDLE contents to validate HTTPS requests. Only available on certain database engines.": [
+            "可选的CA_BUNDLE内容用以验证HTTPS请求。只可用在特定的数据库引擎."
+         ],
+         "Refer to the SqlAlchemy docsfor more information on how to structure your URI.": [
+            "请参考SqlAlchemy文档来构建您的URI"
+         ],
+         "JSON string containing additional connection configuration.<br/>This is used to provide connection information for systems like Hive, Presto, and BigQuery, which do not conform to the username:password syntax normally used by SQLAlchemy.": [
+            "设置JSON字符串用以包含额外的链接配置。<br/>旨在为像Hive，Presto和BigQuery这样的不遵循SQLAlchemy 用户名:密码 校验语法的系统提供连接安全信息。"
+         ],
+         "JSON string containing extra configuration elements.<br/>1. The ``engine_params`` object gets unpacked into the [sqlalchemy.create_engine]call, while the ``metadata_params`` gets unpacked into the [sqlalchemy.MetaData] call.<br/>2. The ``metadata_cache_timeout`` is a cache timeout setting in seconds for metadata fetch of this database. Specify it as \"metadata_cache_timeout\": {\"schema_cache_timeout\": 600,\"table_cache_timeout\": 600}. If unset, cache will not be enabled for the functionality. A timeout of 0 indicates that the cache never expires.<br/>3. The ``schemas_allowed_for_csv_upload`` is a comma separated list of schemas that CSVs are allowed to upload to. Specify it as \"schemas_allowed_for_csv_upload\": [\"public\", \"csv_upload\"]. If database flavor does not support schema or any schema is allowed to be accessed, just leave the list empty.<br>4. the ``version`` field is a string specifying the this db's version. This should be used with Presto DBs so that the syntax is correct.": [
+            "JSON字符串，包含其他配置元素.<br/>1. ``engine_params``对象会作为[sqlalchemy.create_engine]调用的传入参数, ``metadata_params``会作为[sqlalchemy.MetaData]调用的传入参数.<br/>2. ``metadata_cache_timeout``是该数据库元数据信息获取的缓存超时设置, 单位秒. 如：\"metadata_cache_timeout\": {\"schema_cache_timeout\": 600,\"table_cache_timeout\": 600}. 如果取消设置，cache不会启用. 超时时间设为0表示缓存永远不会超时.<br/>3. ``schemas_allowed_for_csv_upload``为逗号分割的schemas，这些schemas允许CSV文件上传.如：\"schemas_allowed_for_csv_upload\": [\"public\", \"csv_upload\"]. 如果数据库不支持schema或者不允许schema上传CSV文件，将参数设为空即可.<br>4. ``version``字段指定Presto数据库的版本以保证数语法的准确性."
+         ],
+         "No row selected": [
+            "未选中记录"
+         ],
+         "a valid, *non-aggregating* SQL expression as supported by the underlying backend. Example: `substr(name, 1, 1)`": [
+            "有效的, *非聚合*的SQL表达式. 如: `substr(name, 1, 1)`"
+         ],
+         "The pattern of timestamp format. For strings use python datetime string pattern expression which needs to adhere to the ISO 8601 standard to ensure that the lexicographical ordering coincides with the chronological ordering. If the timestamp format does not adhere to the ISO 8601 standard you will need to define an expression and type for transforming the string into a date or timestamp. Note currently time zones are not supported. If time is stored in epoch format, put `epoch_s` or `epoch_ms`.If no pattern is specified we fall back to using the optional defaults on a per database/column name level via the extra parameter.": [
+            "时间戳格式. 对于字符串，请使用Python的 datetime字符串表达式, 其需要准守ISO 8601标准以保证按照字符顺序排序和按照时间顺序是一致的. 如果不遵循ISO 8601标准, 您需要定义转换表达式将字符串转换为date或者timestamp. 需要注意的是目前不支持时区设置. 如果不指定格式，则会在数据库/字段级别通过额外的参数指定可选的默认格式"
+         ],
+         "a valid, *aggregating* SQL expression as supported by the underlying backend. Example: `count(DISTINCT userid)`": [
+            "有效的, *聚合*SQL表达式. 如: `count(DISTINCT userid)`"
+         ],
+         "d3 formatting string as defined [here](https://github.com/d3/d3-format/blob/master/README.md#format). For instance, this default formatting applies in the Table visualization and allow for different metric to use different formats": [
+            "d3格式字符串[定义](https://github.com/d3/d3-format/blob/master/README.md#format).例如, 默认格式适用于图表可视化且允许不同的指标使用不同的格式."
+         ],
+         "Only `SELECT` statements are allowed against this database": [
+            "对该数据库目前只允许`SELECT`语句"
+         ],
+         "Perm": [
+            "权限"
+         ],
+         "Annotation": [
+            "注解"
+         ],
+         "Extra Json": [
+            "额外的Json"
+         ],
+         "Client Id": [
+            "客户端ID"
+         ],
+         "Tmp Table Name": [
+            "临时表"
+         ],
+         "Tmp Schema Name": [
+            "临时Schema"
+         ],
+         "Tab Name": [
+            "标签名字"
+         ],
+         "Sql Editor Id": [
+            "Sql编辑器ID"
+         ],
+         "Select Sql": [
+            "Select语句"
+         ],
+         "Executed Sql": [
+            "已执行Sql"
+         ],
+         "Progress": [
+            "进度"
+         ],
+         "Rows": [
+            "行数"
+         ],
+         "Error Message": [
+            "错误信息"
+         ],
+         "Results Key": [
+            "结果Key"
+         ],
+         "Tracking Url": [
+            "Url链接"
+         ],
+         "Start Running Time": [
+            "开始运行时间"
+         ],
+         "End Result Backend Time": [
+            "后端结束时间"
+         ],
+         "Sql": [
+            "Sql语句"
+         ],
+         "Limit": [
+            "限制条数"
+         ],
+         "Show Query": [
+            "查询明细"
+         ],
+         "Show CSS Template": [
+            "CSS模板详情"
+         ],
+         "Edit CSS Template": [
+            "编辑CSS模板"
+         ],
+         "Schema Perm": [
+            "Schema权限"
+         ],
+         "undefined rows": [
+            "未定义的行数"
+         ],
+         "It's not a good policy to remove a user, just make it inactive": [
+            "最好不要删除用户, 一般让他不激活就可以了"
+         ],
+         "Created": [
+            "已创建的"
+         ],
+         "Changed": [
+            "已修改的"
+         ],
+         "Show Annotation Layer": [
+            "显示注释层"
+         ],
+         "This JSON represents any additional metadata this annotation needs to add more context.": [
+            "该JSON表示当前注解需要的额外的元数据信息以提供更多的上下文信息"
+         ],
+         "annotation start time or end time is required.": [
+            "需要指定注解的起始或者结束时间"
+         ],
+         "Show Annotation": [
+            "显示注解"
+         ],
+         "Edit Annotation": [
+            "便捷注解"
          ]
       }
    }

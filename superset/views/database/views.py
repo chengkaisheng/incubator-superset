@@ -85,6 +85,18 @@ class DatabaseView(
         "server_cert": [certificate_form_validator],
     }
 
+#    label_columns = {
+#        "tables": _("Tables"),
+#        "perm": _("Perm"),
+#        "created_by": _("Created By"),
+#        "created_on": _("Created On"),
+#        "changed_by": _("Changed By"),
+#        "changed_on": _("Changed On"),
+#        "cache_timeout": _("Cache Timeout"),
+#        "database_name": _("Database Name"),
+#        "sqlalchemy_uri": _("Sqlalchemy Uri"),
+#    }
+
     yaml_dict_key = "databases"
 
     def _delete(self, pk):

@@ -53,7 +53,7 @@ class QueryFilter(BaseFilter):  # pylint: disable=too-few-public-methods
 
 class QueryView(SupersetModelView):
     datamodel = SQLAInterface(Query)
-    include_route_methods = {RouteMethod.SHOW, RouteMethod.LIST, RouteMethod.API_READ}
+    include_route_methods = {RouteMethod.EDIT, RouteMethod.SHOW, RouteMethod.LIST, RouteMethod.API_READ}
 
     list_title = _("List Query")
     show_title = _("Show Query")
@@ -64,13 +64,34 @@ class QueryView(SupersetModelView):
     order_columns = ["status", "start_time", "end_time"]
     base_filters = [["id", QueryFilter, lambda: []]]
     label_columns = {
+        "database": _("Database"),
         "user": _("User"),
         "username": _("User"),
         "database_name": _("Database"),
         "status": _("Status"),
         "start_time": _("Start Time"),
         "end_time": _("End Time"),
+        "extra_json": _("Extra Json"),
+        "client_id": _("Client Id"),
+        "tmp_table_name": _("Tmp Table Name"),
+        "tmp_schema_name": _("Tmp Schema Name"),
+        "tab_name": _("Tab Name"),
+        "sql_editor_id": _("Sql Editor Id"),
+        "select_sql": _("Select Sql"),
+        "executed_sql": _("Executed Sql"),
+        "progress": _("Progress"),
+        "rows": _("Rows"),
+        "error_message": _("Error Message"),
+        "results_key": _("Results Key"),
+        "start_running_time": _("Start Running Time"),
+        "end_result_backend_time": _("End Result Backend Time"),
+        "tracking_url": _("Tracking Url"),
+        "changed_on": _("Changed On"),
+        "sql": _("Sql"),
+        "limit": _("Limit"),
+
     }
+    # show_exclude_columns = ["extra_json"]
 
 
 class SavedQueryView(

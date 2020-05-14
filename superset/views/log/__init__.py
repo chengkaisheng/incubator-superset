@@ -31,4 +31,8 @@ class LogMixin:  # pylint: disable=too-few-public-methods
         "action": _("Action"),
         "dttm": _("dttm"),
         "json": _("JSON"),
+        "dashboard_id": _("Dashboard Id"),
+        "slice_id": _("Slice Id"),
+        "duration_ms": _("Duration Ms"),
+        "referrer": _("Referrer"),
     }
