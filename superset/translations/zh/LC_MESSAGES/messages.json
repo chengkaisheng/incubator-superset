@@ -4142,7 +4142,10 @@
             "显示注解"
          ],
          "Edit Annotation": [
-            "便捷注解"
+            "编辑注解"
+         ],
+         "If the datasource you are looking for is not available in the list, follow the instructions on the how to add it.": [
+            "如果您要找的数据源不在列表中，请先添加数据源"
          ]
       }
    }

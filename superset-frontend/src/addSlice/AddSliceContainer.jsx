@@ -104,11 +104,8 @@ export default class AddSliceContainer extends React.PureComponent {
                 {t(
                   'If the datasource you are looking for is not ' +
                     'available in the list, ' +
-                    'follow the instructions on the how to add it on the ',
+                    'follow the instructions on the how to add it.',
                 )}
-                <a href="https://superset.apache.org/tutorial.html">
-                  {t('Superset tutorial')}
-                </a>
               </p>
             </div>
             <br />
