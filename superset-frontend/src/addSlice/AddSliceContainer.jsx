@@ -70,7 +70,6 @@ export default class AddSliceContainer extends React.PureComponent {
   }
 
   changeVisType(visType) {
-    console.log('viz type: ', visType);
     this.setState({ visType });
   }
 
@@ -83,11 +82,11 @@ export default class AddSliceContainer extends React.PureComponent {
       <div className="container">
         <Panel>
           <Panel.Heading>
-            <h3>{t('创建一个新图表')}</h3>
+            <h3>{t('Create a new chart')}</h3>
           </Panel.Heading>
           <Panel.Body>
             <div>
-              <p>{t('选择数据源')}</p>
+              <p>{t('Choose a datasource')}</p>
               <div style={styleSelectWidth}>
                 <Select
                   clearable={false}
@@ -95,7 +94,7 @@ export default class AddSliceContainer extends React.PureComponent {
                   name="select-datasource"
                   onChange={this.changeDatasource}
                   options={this.props.datasources}
-                  placeholder={t('选择数据源')}
+                  placeholder={t('Choose a datasource')}
                   style={styleSelectWidth}
                   value={this.state.datasourceValue}
                   width={600}
@@ -111,11 +110,11 @@ export default class AddSliceContainer extends React.PureComponent {
             </div>
             <br />
             <div>
-              <p>{t('选择一个可视化类型')}</p>
+              <p>{t('Choose a visualization type')}</p>
               <VizTypeControl
                 name="select-vis-type"
                 onChange={this.changeVisType}
-                value={t(this.state.visType)}
+                value={this.state.visType}
               />
             </div>
             <br />
@@ -125,7 +124,7 @@ export default class AddSliceContainer extends React.PureComponent {
               disabled={this.isBtnDisabled()}
               onClick={this.gotoSlice}
             >
-              {t('创建新图表')}
+              {t('Create new chart')}
             </Button>
             <br />
             <br />
