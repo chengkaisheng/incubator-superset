@@ -4725,3 +4725,100 @@ msgstr "编辑注解"
 
 msgid "If the datasource you are looking for is not available in the list, follow the instructions on the how to add it."
 msgstr "如果您要找的数据源不在列表中，请先添加数据源"
+
+msgid "Datasource Editor for "
+msgstr "数据源编辑器："
+
+msgid "Calculated Columns"
+msgstr "已计算列"
+
+msgid "Add Item"
+msgstr "添加记录"
+
+msgid "Data Type"
+msgstr "数据类型"
+
+msgid "Is Temporal"
+msgstr "是否临时列"
+
+msgid "Is Filterable"
+msgstr "是否可过滤"
+
+msgid "Is Dimension"
+msgstr "是否是维度"
+
+msgid "No entries"
+msgstr "无记录"
+
+msgid "<enter SQL expression here>"
+msgstr "<在这里输入SQL表达式>"
+
+msgid "<new column>"
+msgstr "<新列名>"
+
+msgid "Sync columns from source"
+msgstr "从数据源同步列"
+
+msgid "Use Legacy Datasource Editor"
+msgstr "使用旧版数据源编辑器"
+
+msgid "Settings"
+msgstr "设置"
+
+msgid "Be careful."
+msgstr "请注意!"
+
+msgid "Changing these settings will affect all charts using this datasource, including charts owned by other people."
+msgstr "修改这些设置会影响到使用该数据源的所有图表，包括属于其他人的图表。"
+
+msgid "Basic"
+msgstr "基础"
+
+msgid "Physical Table"
+msgstr "物理表"
+
+msgid ""
+"The pointer to a physical table. Keep in mind that the chart is "
+"associated to this Superset logical table, and this logical table points "
+"the physical table referenced here."
+msgstr "指向物理表的指针。请记住图表会和该逻辑表关联起来，该逻辑表指向这里设定的物理表。"
+
+msgid "Default URL"
+msgstr "默认URL"
+
+msgid "Default URL to redirect to when accessing from the datasource list page"
+msgstr "从数据源列表点击时默认跳转的URL"
+
+msgid "Autocomplete filters"
+msgstr "自动补全过滤器"
+
+msgid "Whether to populate autocomplete filters options"
+msgstr "是否设置自动补全过滤器参数"
+
+msgid "Autocomplete Query Predicate"
+msgstr "自动补全查询谓词"
+
+msgid "Owners of the datasource"
+msgstr "数据源所有者"
+
+msgid "Hours offset"
+msgstr "时间偏移"
+
+msgid "The duration of time in seconds before the cache is invalidated"
+msgstr "缓存保留时间（秒）"
+
+msgid ""
+"When using \"Autocomplete filters\", this can be used to improve performance "
+"of the query fetching the values. Use this option to apply a "
+"predicate (WHERE clause) to the query selecting the distinct "
+"values from the table. Typically the intent would be to limit the scan "
+"by applying a relative time filter on a partitioned or indexed time-related field."
+msgstr "指定'自动补全过滤器'可以提高获取数据的查询性能。使用该选项来为查询distinct值的查询指定一个假设条件（where语句）,"
+"其想法是通过在分区或者有索引的时间相关字段上指定时间过滤器来限制扫描的记录数"
+
+msgid ""
+"When specifying SQL, the datasource acts as a view. "
+"Superset will use this statement as a subquery while grouping and filtering "
+"on the generated parent queries."
+msgstr "当指定SQL时，数据源充当了一个视图。在对生成的父查询进行分组和过滤的时候我们会用该语句作为一个子查询"
+

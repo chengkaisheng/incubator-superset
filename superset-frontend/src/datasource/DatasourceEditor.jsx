@@ -717,10 +717,10 @@ export class DatasourceEditor extends React.PureComponent {
                 allowAddItem
                 allowEditDataType
                 itemGenerator={() => ({
-                  column_name: '<new column>',
+                  column_name: t('<new column>'),
                   filterable: true,
                   groupby: true,
-                  expression: '<enter SQL expression here>',
+                  expression: t('<enter SQL expression here>'),
                   __expanded: true,
                 })}
               />

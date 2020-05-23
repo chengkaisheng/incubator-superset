@@ -4146,6 +4146,90 @@
          ],
          "If the datasource you are looking for is not available in the list, follow the instructions on the how to add it.": [
             "如果您要找的数据源不在列表中，请先添加数据源"
+         ],
+         "Datasource Editor for ": [
+            "数据源编辑器："
+         ],
+         "Calculated Columns": [
+            "已计算列"
+         ],
+         "Add Item": [
+            "添加记录"
+         ],
+         "Data Type": [
+            "数据类型"
+         ],
+         "Is Temporal": [
+            "是否临时列"
+         ],
+         "Is Filterable": [
+            "是否可过滤"
+         ],
+         "Is Dimension": [
+            "是否是维度"
+         ],
+         "No entries": [
+            "无记录"
+         ],
+         "<enter SQL expression here>": [
+            "<在这里输入SQL表达式>"
+         ],
+         "<new column>": [
+            "<新列名>"
+         ],
+         "Sync columns from source": [
+            "从数据源同步列"
+         ],
+         "Use Legacy Datasource Editor": [
+            "使用旧版数据源编辑器"
+         ],
+         "Settings": [
+            "设置"
+         ],
+         "Be careful.": [
+            "请注意!"
+         ],
+         "Changing these settings will affect all charts using this datasource, including charts owned by other people.": [
+            "修改这些设置会影响到使用该数据源的所有图表，包括属于其他人的图表。"
+         ],
+         "Basic": [
+            "基础"
+         ],
+         "Physical Table": [
+            "物理表"
+         ],
+         "The pointer to a physical table. Keep in mind that the chart is associated to this Superset logical table, and this logical table points the physical table referenced here.": [
+            "指向物理表的指针。请记住图表会和该逻辑表关联起来，该逻辑表指向这里设定的物理表。"
+         ],
+         "Default URL": [
+            "默认URL"
+         ],
+         "Default URL to redirect to when accessing from the datasource list page": [
+            "从数据源列表点击时默认跳转的URL"
+         ],
+         "Autocomplete filters": [
+            "自动补全过滤器"
+         ],
+         "Whether to populate autocomplete filters options": [
+            "是否设置自动补全过滤器参数"
+         ],
+         "Autocomplete Query Predicate": [
+            "自动补全查询谓词"
+         ],
+         "Owners of the datasource": [
+            "数据源所有者"
+         ],
+         "Hours offset": [
+            "时间偏移"
+         ],
+         "The duration of time in seconds before the cache is invalidated": [
+            "缓存保留时间（秒）"
+         ],
+         "When using \"Autocomplete filters\", this can be used to improve performance of the query fetching the values. Use this option to apply a predicate (WHERE clause) to the query selecting the distinct values from the table. Typically the intent would be to limit the scan by applying a relative time filter on a partitioned or indexed time-related field.": [
+            "指定'自动补全过滤器'可以提高获取数据的查询性能。使用该选项来为查询distinct值的查询指定一个假设条件（where语句）,其想法是通过在分区或者有索引的时间相关字段上指定时间过滤器来限制扫描的记录数"
+         ],
+         "When specifying SQL, the datasource acts as a view. Superset will use this statement as a subquery while grouping and filtering on the generated parent queries.": [
+            "当指定SQL时，数据源充当了一个视图。在对生成的父查询进行分组和过滤的时候我们会用该语句作为一个子查询"
          ]
       }
    }
