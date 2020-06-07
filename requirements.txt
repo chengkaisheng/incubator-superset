@@ -86,3 +86,8 @@ zipp==2.0.0               # via importlib-metadata
 
 # The following packages are considered to be unsafe in a requirements file:
 # setuptools
+
+mysqlclient
+cx_Oracle
+psycopg2
+pyhive
