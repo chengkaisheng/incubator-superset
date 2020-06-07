@@ -3563,7 +3563,7 @@
             "决定该仪表盘是否可以在看板列表中显示"
          ],
          "Published": [
-            "是否公开"
+            "是否发布"
          ],
          "SQL Query": [
             "SQL查询"
@@ -4230,6 +4230,42 @@
          ],
          "When specifying SQL, the datasource acts as a view. Superset will use this statement as a subquery while grouping and filtering on the generated parent queries.": [
             "当指定SQL时，数据源充当了一个视图。在对生成的父查询进行分组和过滤的时候我们会用该语句作为一个子查询"
+         ],
+         "Edit chart metadata": [
+            "编辑图表元数据"
+         ],
+         "Force refresh dashboard": [
+            "强制刷新看板"
+         ],
+         "Auto-refresh dashboard": [
+            "自动刷新看板"
+         ],
+         "Share dashboard": [
+            "分享看板"
+         ],
+         "Edit dashboard": [
+            "编辑看板"
+         ],
+         "This dashboard is published. Click to make it a draft.": [
+            "该看板已经发布. 点击使其成为草稿"
+         ],
+         "This dashboard is not published, it will not show up in the list of dashboards. Click here to publish this dashboard.": [
+            "该看板还未发布, 因此不会在看板列表展示. 点击以发布该看板"
+         ],
+         "This dashboard is now hidden": [
+            "该看板已隐藏"
+         ],
+         "This dashboard is now published": [
+            "该看板已经发布"
+         ],
+         "Force refresh": [
+            "强制刷新"
+         ],
+         "Share chart": [
+            "分享图表"
+         ],
+         "Fetched %s": [
+            "%前获取"
          ]
       }
    }

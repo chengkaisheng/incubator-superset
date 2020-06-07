@@ -176,7 +176,7 @@ PROXY_FIX_CONFIG = {"x_for": 1, "x_proto": 1, "x_host": 1, "x_port": 1, "x_prefi
 # GLOBALS FOR APP Builder
 # ------------------------------
 # Uncomment to setup Your App name
-APP_NAME = "Superset"
+APP_NAME = "Datains2"
 
 # Uncomment to setup an App icon
 APP_ICON = "/static/assets/images/superset-logo@2x.png"

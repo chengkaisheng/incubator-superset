@@ -4077,7 +4077,7 @@ msgid "Determines whether or not this dashboard is visible in the list of all da
 msgstr "决定该仪表盘是否可以在看板列表中显示"
 
 msgid "Published"
-msgstr "是否公开"
+msgstr "是否发布"
 
 msgid "SQL Query"
 msgstr "SQL查询"
@@ -4821,4 +4821,43 @@ msgid ""
 "Superset will use this statement as a subquery while grouping and filtering "
 "on the generated parent queries."
 msgstr "当指定SQL时，数据源充当了一个视图。在对生成的父查询进行分组和过滤的时候我们会用该语句作为一个子查询"
+
+msgid "Edit chart metadata"
+msgstr "编辑图表元数据"
+
+msgid "Force refresh dashboard"
+msgstr "强制刷新看板"
+
+msgid "Auto-refresh dashboard"
+msgstr "自动刷新看板"
+
+msgid "Share dashboard"
+msgstr "分享看板"
+
+msgid "Edit dashboard"
+msgstr "编辑看板"
+
+msgid "This dashboard is published. Click to make it a draft."
+msgstr "该看板已经发布. 点击使其成为草稿"
+
+msgid ""
+"This dashboard is not published, it will not show up in the list of dashboards. "
+"Click here to publish this dashboard."
+msgstr "该看板还未发布, 因此不会在看板列表展示. 点击以发布该看板"
+
+msgid "This dashboard is now hidden"
+msgstr "该看板已隐藏"
+
+msgid "This dashboard is now published"
+msgstr "该看板已经发布"
+
+msgid "Force refresh"
+msgstr "强制刷新"
+
+msgid "Share chart"
+msgstr "分享图表"
+
+msgid "Fetched %s"
+msgstr "%前获取"
+
 
