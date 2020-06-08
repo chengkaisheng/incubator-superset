@@ -4264,8 +4264,68 @@
          "Share chart": [
             "分享图表"
          ],
-         "Fetched %s": [
-            "%前获取"
+         "Components": [
+            "组件"
+         ],
+         "Colors": [
+            "颜色"
+         ],
+         "Switch to view mode": [
+            "切换到视图模式"
+         ],
+         "Set auto-refresh interval": [
+            "设置自动刷新间隔"
+         ],
+         "Edit dashboard properties": [
+            "编辑看板属性"
+         ],
+         "also copy (duplicate) charts": [
+            "同时拷贝图表"
+         ],
+         "Dashboard Properties": [
+            "看板属性"
+         ],
+         "A readable URL for your dashboard": [
+            "看板的URL"
+         ],
+         "Owners is a list of users who can alter the dashboard. Searchable by name or username.": [
+            "看板所有者指的是可以修改看板的人员。可以通过名字搜索"
+         ],
+         "Share Dashboard": [
+            "分享看板"
+         ],
+         "Color Settings": [
+            "颜色设置"
+         ],
+         "Insert components": [
+            "插入组件"
+         ],
+         "Row": [
+            "行"
+         ],
+         "Your charts & filters": [
+            "您的图表和过滤器"
+         ],
+         "Your charts and filters": [
+            "您的图表和过滤器"
+         ],
+         "Filter your charts": [
+            "过滤图表"
+         ],
+         "Sort by Recent": [
+            "按最近使用排序"
+         ],
+         "Sort by Name": [
+            "按名字排序"
+         ],
+         "Sort by Vis type": [
+            "按图表类型排序"
+         ],
+         "Sort by Datasource": [
+            "按数据源排序"
+         ],
+         "ADDED": [
+            "已添加"
          ]
       }
    }
