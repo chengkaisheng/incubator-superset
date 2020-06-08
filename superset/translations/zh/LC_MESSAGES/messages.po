@@ -4857,7 +4857,79 @@ msgstr "强制刷新"
 msgid "Share chart"
 msgstr "分享图表"
 
-msgid "Fetched %s"
-msgstr "%前获取"
+msgid "Components"
+msgstr "组件"
+
+msgid "Colors"
+msgstr "颜色"
+
+msgid "Switch to view mode"
+msgstr "切换到视图模式"
+
+msgid "Set auto-refresh interval"
+msgstr "设置自动刷新间隔"
+
+msgid "Edit dashboard properties"
+msgstr "编辑看板属性"
+
+msgid "also copy (duplicate) charts"
+msgstr "同时拷贝图表"
+
+msgid "Dashboard Properties"
+msgstr "看板属性"
+
+msgid "A readable URL for your dashboard"
+msgstr "看板的URL"
+
+msgid "Owners is a list of users who can alter the dashboard. Searchable by name or username."
+msgstr "看板所有者指的是可以修改看板的人员。可以通过名字搜索"
+
+msgid "Share Dashboard"
+msgstr "分享看板"
+
+msgid "Color Settings"
+msgstr "颜色设置"
+
+msgid "Insert components"
+msgstr "插入组件"
+
+msgid "Row"
+msgstr "行"
+
+msgid "Your charts & filters"
+msgstr "您的图表和过滤器"
+
+msgid "Your charts and filters"
+msgstr "您的图表和过滤器"
+
+msgid "Filter your charts"
+msgstr "过滤图表"
+
+msgid "Sort by Recent"
+msgstr "按最近使用排序"
+
+msgid "Sort by Name"
+msgstr "按名字排序"
+
+msgid "Sort by Vis type"
+msgstr "按图表类型排序"
+
+msgid "Sort by Datasource"
+msgstr "按数据源排序"
+
+msgid "ADDED"
+msgstr "已添加"
+
+msgid "Configure filter scopes"
+msgstr "配置过滤器范围"
+
+msgid "There are no filters in this dashboard."
+msgstr "该看板中无过滤器"
+
+msgid "Data source"
+msgstr "数据源"
+
+msgid "Visualization"
+msgstr "图表类型"
 
 
