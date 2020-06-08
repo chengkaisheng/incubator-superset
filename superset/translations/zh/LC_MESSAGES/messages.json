@@ -4326,6 +4326,21 @@
          ],
          "ADDED": [
             "已添加"
+         ],
+         "Configure filter scopes": [
+            "配置过滤器范围"
+         ],
+         "There are no filters in this dashboard.": [
+            "该看板中无过滤器"
+         ],
+         "Data source": [
+            "数据源"
+         ],
+         "Visualization": [
+            "图表类型"
+         ],
+         "Save changes": [
+            "保存修改"
          ]
       }
    }

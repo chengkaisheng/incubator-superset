@@ -4932,4 +4932,7 @@ msgstr "数据源"
 msgid "Visualization"
 msgstr "图表类型"
 
+msgid "Save changes"
+msgstr "保存修改"
+
 
