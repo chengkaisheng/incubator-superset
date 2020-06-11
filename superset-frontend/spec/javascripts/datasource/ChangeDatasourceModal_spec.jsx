@@ -42,7 +42,7 @@ const datasourceData = {
   uid: datasource.id,
 };
 
-const DATASOURCES_ENDPOINT = 'glob:*/superset/datasources/';
+const DATASOURCES_ENDPOINT = 'glob:*/datains/datasources/';
 const DATASOURCE_ENDPOINT = `glob:*/datasource/get/${datasourceData.type}/${datasourceData.id}`;
 const DATASOURCES_PAYLOAD = { json: 'data' };
 const DATASOURCE_PAYLOAD = { new: 'data' };

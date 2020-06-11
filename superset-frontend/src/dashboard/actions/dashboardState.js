@@ -58,7 +58,7 @@ export function removeSlice(sliceId) {
   return { type: REMOVE_SLICE, sliceId };
 }
 
-const FAVESTAR_BASE_URL = '/superset/favstar/Dashboard';
+const FAVESTAR_BASE_URL = '/datains/favstar/Dashboard';
 export const TOGGLE_FAVE_STAR = 'TOGGLE_FAVE_STAR';
 export function toggleFaveStar(isStarred) {
   return { type: TOGGLE_FAVE_STAR, isStarred };
@@ -190,7 +190,7 @@ export function saveDashboardRequest(data, id, saveType) {
     // serialize filter scope for each filter field, grouped by filter id
     const serializedFilterScopes = serializeFilterScopes(dashboardFilters);
     return SupersetClient.post({
-      endpoint: `/superset/${path}/${id}/`,
+      endpoint: `/datains/${path}/${id}/`,
       postPayload: {
         data: {
           ...data,

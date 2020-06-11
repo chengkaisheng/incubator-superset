@@ -133,7 +133,7 @@ class SaveModal extends React.PureComponent {
           resp.json &&
           resp.json.id
         ) {
-          window.location = `/superset/dashboard/${resp.json.id}/`;
+          window.location = `/datains/dashboard/${resp.json.id}/`;
         }
       });
       this.modal.close();

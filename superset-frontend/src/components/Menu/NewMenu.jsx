@@ -39,7 +39,7 @@ export default function NewMenu() {
       </button>
       <ul className="dropdown-menu">
         <li>
-          <a href="/superset/sqllab">
+          <a href="/datains/sqllab">
             <span className="fa fa-fw fa-search" />
             {t('SQL Query')}
           </a>

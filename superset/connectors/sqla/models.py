@@ -450,7 +450,7 @@ class SqlaTable(Model, BaseDatasource):
     def changed_by_url(self) -> str:
         if not self.changed_by:
             return ""
-        return f"/superset/profile/{self.changed_by.username}"
+        return f"/datains/profile/{self.changed_by.username}"
 
     @property
     def connection(self) -> str:

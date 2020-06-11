@@ -42,7 +42,7 @@ export default () =>
         ).slice_id;
         aliases = sliceIds.map(id => {
           const alias = getAlias(id);
-          const url = `/superset/explore_json/?*{"slice_id":${id}}*`;
+          const url = `/datains/explore_json/?*{"slice_id":${id}}*`;
           cy.route('POST', url).as(alias.slice(1));
           return alias;
         });

@@ -41,7 +41,7 @@ export default () =>
           const sliceRequest = `getJson_${slice.slice_id}`;
           sliceRequests.push(`@${sliceRequest}`);
           const formData = `{"slice_id":${slice.slice_id}}`;
-          cy.route('POST', `/superset/explore_json/?form_data=${formData}`).as(
+          cy.route('POST', `/datains/explore_json/?form_data=${formData}`).as(
             sliceRequest,
           );
 
@@ -49,7 +49,7 @@ export default () =>
           forceRefreshRequests.push(`@${forceRefresh}`);
           cy.route(
             'POST',
-            `/superset/explore_json/?form_data={"slice_id":${slice.slice_id}}&force=true`,
+            `/datains/explore_json/?form_data={"slice_id":${slice.slice_id}}&force=true`,
           ).as(forceRefresh);
         });
       });

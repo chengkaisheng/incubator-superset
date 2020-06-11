@@ -410,7 +410,7 @@ class TableModelView(DatasourceModelView, DeleteMixin, YamlExportMixin):
         resp = super(TableModelView, self).edit(pk)
         if isinstance(resp, str):
             return resp
-        return redirect("/superset/explore/table/{}/".format(pk))
+        return redirect("/datains/explore/table/{}/".format(pk))
 
     @action(
         "refresh", __("Refresh Metadata"), __("Refresh column metadata"), "fa-refresh"

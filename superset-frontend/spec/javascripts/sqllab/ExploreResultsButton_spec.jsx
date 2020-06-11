@@ -172,7 +172,7 @@ describe('ExploreResultsButton', () => {
       datasourceName: 'mockDatasourceName',
     });
 
-    const visualizeURL = '/superset/sqllab_viz/';
+    const visualizeURL = '/datains/sqllab_viz/';
     const visualizeEndpoint = `glob:*${visualizeURL}`;
     const visualizationPayload = { table_id: 107 };
     fetchMock.post(visualizeEndpoint, visualizationPayload);

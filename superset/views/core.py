@@ -345,7 +345,7 @@ class R(BaseSupersetView):
     def index(self, url_id):
         url = db.session.query(models.Url).get(url_id)
         if url and url.url:
-            explore_url = "//superset/explore/?"
+            explore_url = "//datains/explore/?"
             if url.url.startswith(explore_url):
                 explore_url += f"r={url_id}"
                 return redirect(explore_url[1:])
@@ -376,6 +376,7 @@ class Superset(BaseSupersetView):
 
     logger = logging.getLogger(__name__)
 
+    route_base = "/datains"
     @has_access_api
     @expose("/datasources/")
     def datasources(self):
@@ -461,7 +462,7 @@ class Superset(BaseSupersetView):
             )
         )
         if has_access:
-            return redirect("/superset/dashboard/{}".format(dashboard_id))
+            return redirect("/datains/dashboard/{}".format(dashboard_id))
 
         if request.args.get("action") == "go":
             for datasource in datasources:
@@ -588,7 +589,7 @@ class Superset(BaseSupersetView):
         form_data, slc = get_form_data(slice_id, use_slice_data=True)
         if not slc:
             abort(404)
-        endpoint = "/superset/explore/?form_data={}".format(
+        endpoint = "/datains/explore/?form_data={}".format(
             parse.quote(json.dumps({"slice_id": slice_id}))
         )
         param = utils.ReservedUrlParameters.STANDALONE.value
@@ -727,6 +728,7 @@ class Superset(BaseSupersetView):
     @expose("/import_dashboards", methods=["GET", "POST"])
     def import_dashboards(self):
         """Overrides the dashboards using json instances from the file."""
+        logger.info("-----------------------------------");
         f = request.files.get("file")
         if request.method == "POST" and f:
             try:
@@ -777,7 +779,7 @@ class Superset(BaseSupersetView):
                 )
             )
         ):
-            url = Href("/superset/explore/")(
+            url = Href("/datains/explore/")(
                 {
                     "form_data": json.dumps(
                         {
@@ -1511,7 +1513,7 @@ class Superset(BaseSupersetView):
             if o.Dashboard.created_by:
                 user = o.Dashboard.created_by
                 d["creator"] = str(user)
-                d["creator_url"] = "/superset/profile/{}/".format(user.username)
+                d["creator_url"] = "/datains/profile/{}/".format(user.username)
             payload.append(d)
         return json_success(json.dumps(payload, default=utils.json_int_dttm_ser))
 
@@ -1636,7 +1638,7 @@ class Superset(BaseSupersetView):
             if o.Slice.created_by:
                 user = o.Slice.created_by
                 d["creator"] = str(user)
-                d["creator_url"] = "/superset/profile/{}/".format(user.username)
+                d["creator_url"] = "/datains/profile/{}/".format(user.username)
             payload.append(d)
         return json_success(json.dumps(payload, default=utils.json_int_dttm_ser))
 
@@ -2630,7 +2632,7 @@ class Superset(BaseSupersetView):
     def search_queries(self) -> Response:
         """
         Search for previously run sqllab queries. Used for Sqllab Query Search
-        page /superset/sqllab#search.
+        page /datains/sqllab#search.
 
         Custom permission can_only_search_queries_owned restricts queries
         to only queries run by current user.

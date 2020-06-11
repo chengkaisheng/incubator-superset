@@ -36,7 +36,7 @@ export default () =>
         slices.forEach(slice => {
           const alias = `getJson_${slice.slice_id}`;
           const formData = `{"slice_id":${slice.slice_id}}`;
-          cy.route('POST', `/superset/explore_json/?*${formData}*`).as(alias);
+          cy.route('POST', `/datains/explore_json/?*${formData}*`).as(alias);
           aliases.push(`@${alias}`);
         });
       });

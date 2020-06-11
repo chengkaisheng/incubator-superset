@@ -45,7 +45,7 @@ export default () =>
         aliases.push(`@${alias}`);
         cy.route(
           'POST',
-          `/superset/explore_json/?form_data={"slice_id":${id}}&dashboard_id=${dashboardId}`,
+          `/datains/explore_json/?form_data={"slice_id":${id}}&dashboard_id=${dashboardId}`,
         ).as(alias);
       });
 

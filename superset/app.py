@@ -69,7 +69,7 @@ def create_app():
 class SupersetIndexView(IndexView):
     @expose("/")
     def index(self):
-        return redirect("/superset/welcome")
+        return redirect("/datains/welcome")
 
 
 class SupersetAppInitializer:
@@ -303,7 +303,7 @@ class SupersetAppInitializer:
         appbuilder.add_link(
             "Import Dashboards",
             label=_("Import Dashboards"),
-            href="/superset/import_dashboards",
+            href="/datains/import_dashboards",
             icon="fa-cloud-upload",
             category="Manage",
             category_label=__("Manage"),
@@ -312,7 +312,7 @@ class SupersetAppInitializer:
         appbuilder.add_link(
             "SQL Editor",
             label=_("SQL Editor"),
-            href="/superset/sqllab",
+            href="/datains/sqllab",
             category_icon="fa-flask",
             icon="fa-flask",
             category="SQL Lab",
@@ -328,7 +328,7 @@ class SupersetAppInitializer:
         appbuilder.add_link(
             "Query Search",
             label=_("Query Search"),
-            href="/superset/sqllab#search",
+            href="/datains/sqllab#search",
             icon="fa-search",
             category_icon="fa-flask",
             category="SQL Lab",

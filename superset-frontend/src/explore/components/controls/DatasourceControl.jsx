@@ -143,7 +143,7 @@ class DatasourceControl extends React.PureComponent {
               {datasource.type === 'table' && (
                 <MenuItem
                   eventKey="3"
-                  href={`/superset/sqllab?datasourceKey=${value}`}
+                  href={`/datains/sqllab?datasourceKey=${value}`}
                   target="_blank"
                   rel="noopener noreferrer"
                 >

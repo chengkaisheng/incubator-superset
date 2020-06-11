@@ -68,10 +68,10 @@ class QueryAutoRefresh extends React.PureComponent {
     this.timer = null;
   }
   stopwatch() {
-    // only poll /superset/queries/ if there are started or running queries
+    // only poll /datains/queries/ if there are started or running queries
     if (this.shouldCheckForQueries()) {
       SupersetClient.get({
-        endpoint: `/superset/queries/${this.props.queriesLastUpdate -
+        endpoint: `/datains/queries/${this.props.queriesLastUpdate -
           QUERY_UPDATE_BUFFER_MS}`,
         timeout: QUERY_TIMEOUT_LIMIT,
       })

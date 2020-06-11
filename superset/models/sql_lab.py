@@ -173,7 +173,7 @@ class SavedQuery(Model, AuditMixinNullable, ExtraJSONMixin):
     def pop_tab_link(self):
         return Markup(
             f"""
-            <a href="/superset/sqllab?savedQueryId={self.id}">
+            <a href="/datains/sqllab?savedQueryId={self.id}">
                 <i class="fa fa-link"></i>
             </a>
         """
@@ -188,7 +188,7 @@ class SavedQuery(Model, AuditMixinNullable, ExtraJSONMixin):
         return self.database.sqlalchemy_uri
 
     def url(self):
-        return "/superset/sqllab?savedQueryId={0}".format(self.id)
+        return "/datains/sqllab?savedQueryId={0}".format(self.id)
 
 
 class TabState(Model, AuditMixinNullable, ExtraJSONMixin):

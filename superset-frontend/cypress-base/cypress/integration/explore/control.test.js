@@ -26,8 +26,8 @@ describe('Groupby', () => {
     cy.server();
     cy.login();
 
-    cy.route('GET', '/superset/explore_json/**').as('getJson');
-    cy.route('POST', '/superset/explore_json/**').as('postJson');
+    cy.route('GET', '/datains/explore_json/**').as('getJson');
+    cy.route('POST', '/datains/explore_json/**').as('postJson');
     cy.visitChartByName('Num Births Trend');
     cy.verifySliceSuccess({ waitAlias: '@postJson' });
 
@@ -45,8 +45,8 @@ describe('AdhocMetrics', () => {
   beforeEach(() => {
     cy.login();
     cy.server();
-    cy.route('GET', '/superset/explore_json/**').as('getJson');
-    cy.route('POST', '/superset/explore_json/**').as('postJson');
+    cy.route('GET', '/datains/explore_json/**').as('getJson');
+    cy.route('POST', '/datains/explore_json/**').as('postJson');
   });
 
   it('Clear metric and set simple adhoc metric', () => {
@@ -153,8 +153,8 @@ describe('AdhocFilters', () => {
   beforeEach(() => {
     cy.login();
     cy.server();
-    cy.route('GET', '/superset/explore_json/**').as('getJson');
-    cy.route('POST', '/superset/explore_json/**').as('postJson');
+    cy.route('GET', '/datains/explore_json/**').as('getJson');
+    cy.route('POST', '/datains/explore_json/**').as('postJson');
   });
 
   it('Set simple adhoc filter', () => {
@@ -223,8 +223,8 @@ describe('Advanced analytics', () => {
   beforeEach(() => {
     cy.login();
     cy.server();
-    cy.route('GET', '/superset/explore_json/**').as('getJson');
-    cy.route('POST', '/superset/explore_json/**').as('postJson');
+    cy.route('GET', '/datains/explore_json/**').as('getJson');
+    cy.route('POST', '/datains/explore_json/**').as('postJson');
   });
 
   it('Create custom time compare', () => {
@@ -264,8 +264,8 @@ describe('Annotations', () => {
   beforeEach(() => {
     cy.login();
     cy.server();
-    cy.route('GET', '/superset/explore_json/**').as('getJson');
-    cy.route('POST', '/superset/explore_json/**').as('postJson');
+    cy.route('GET', '/datains/explore_json/**').as('getJson');
+    cy.route('POST', '/datains/explore_json/**').as('postJson');
   });
 
   it('Create formula annotation y-axis goal line', () => {
@@ -308,8 +308,8 @@ describe('Time range filter', () => {
   beforeEach(() => {
     cy.login();
     cy.server();
-    cy.route('GET', '/superset/explore_json/**').as('getJson');
-    cy.route('POST', '/superset/explore_json/**').as('postJson');
+    cy.route('GET', '/datains/explore_json/**').as('getJson');
+    cy.route('POST', '/datains/explore_json/**').as('postJson');
   });
 
   it('Defaults to the correct tab for time_range params', () => {

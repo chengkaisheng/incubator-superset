@@ -37,7 +37,7 @@ export default () =>
           slice => slice.form_data.viz_type === 'box_plot',
         ).slice_id;
 
-        cy.route('POST', `/superset/copy_dash/${dashboardId}/`).as(
+        cy.route('POST', `/datains/copy_dash/${dashboardId}/`).as(
           'copyRequest',
         );
       });
@@ -71,7 +71,7 @@ export default () =>
         .trigger('click', { force: true });
       cy.get('.grid-container .box_plot').should('not.exist');
 
-      cy.route('POST', '/superset/save_dash/**/').as('saveRequest');
+      cy.route('POST', '/datains/save_dash/**/').as('saveRequest');
       cy.get('.dashboard-header')
         .contains('Save changes')
         .trigger('click', { force: true });

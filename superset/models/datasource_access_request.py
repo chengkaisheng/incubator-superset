@@ -76,7 +76,7 @@ class DatasourceAccessRequest(Model, AuditMixinNullable):
                 continue
             # pylint: disable=no-member
             href = (
-                f"/superset/approve?datasource_type={self.datasource_type}&"
+                f"/datains/approve?datasource_type={self.datasource_type}&"
                 f"datasource_id={self.datasource_id}&"
                 f"created_by={self.created_by.username}&role_to_grant={role.name}"
             )
@@ -90,7 +90,7 @@ class DatasourceAccessRequest(Model, AuditMixinNullable):
         for role in self.created_by.roles:  # pylint: disable=no-member
             # pylint: disable=no-member
             href = (
-                f"/superset/approve?datasource_type={self.datasource_type}&"
+                f"/datains/approve?datasource_type={self.datasource_type}&"
                 f"datasource_id={self.datasource_id}&"
                 f"created_by={self.created_by.username}&role_to_extend={role.name}"
             )

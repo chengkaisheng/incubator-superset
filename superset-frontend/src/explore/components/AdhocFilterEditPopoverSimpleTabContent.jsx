@@ -209,7 +209,7 @@ export default class AdhocFilterEditPopoverSimpleTabContent extends React.Compon
 
       SupersetClient.get({
         signal,
-        endpoint: `/superset/filter/${datasource.type}/${datasource.id}/${col}/`,
+        endpoint: `/datains/filter/${datasource.type}/${datasource.id}/${col}/`,
       }).then(({ json }) => {
         this.setState(() => ({
           suggestions: json,

@@ -60,7 +60,7 @@ const App = () => (
       <Router>
         <Menu data={menu} />
         <Switch>
-          <Route path="/superset/welcome/">
+          <Route path="/datains/welcome/">
             <Welcome user={user} />
           </Route>
           <Route path="/dashboard/list/">

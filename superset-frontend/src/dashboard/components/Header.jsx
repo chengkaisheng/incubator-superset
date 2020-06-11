@@ -462,7 +462,7 @@ class Header extends React.PureComponent {
                   history.pushState(
                     { event: 'dashboard_properties_changed' },
                     '',
-                    `/superset/dashboard/${updates.slug}/`,
+                    `/datains/dashboard/${updates.slug}/`,
                   );
                 }
               }}

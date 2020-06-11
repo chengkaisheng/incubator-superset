@@ -61,7 +61,7 @@ export default () =>
         const filterFormdata = {
           slice_id: filterId,
         };
-        const filterRequest = `/superset/explore_json/?form_data=${JSON.stringify(
+        const filterRequest = `/datains/explore_json/?form_data=${JSON.stringify(
           filterFormdata,
         )}&dashboard_id=${dashboardId}`;
         cy.route('POST', filterRequest).as('filterRequest');
@@ -69,7 +69,7 @@ export default () =>
         const treemapFormdata = {
           slice_id: treemapId,
         };
-        const treemapRequest = `/superset/explore_json/?form_data=${JSON.stringify(
+        const treemapRequest = `/datains/explore_json/?form_data=${JSON.stringify(
           treemapFormdata,
         )}&dashboard_id=${dashboardId}`;
         cy.route('POST', treemapRequest).as('treemapRequest');
@@ -77,7 +77,7 @@ export default () =>
         const linechartFormdata = {
           slice_id: linechartId,
         };
-        const linechartRequest = `/superset/explore_json/?form_data=${JSON.stringify(
+        const linechartRequest = `/datains/explore_json/?form_data=${JSON.stringify(
           linechartFormdata,
         )}&dashboard_id=${dashboardId}`;
         cy.route('POST', linechartRequest).as('linechartRequest');
@@ -85,7 +85,7 @@ export default () =>
         const boxplotFormdata = {
           slice_id: boxplotId,
         };
-        const boxplotRequest = `/superset/explore_json/?form_data=${JSON.stringify(
+        const boxplotRequest = `/datains/explore_json/?form_data=${JSON.stringify(
           boxplotFormdata,
         )}&dashboard_id=${dashboardId}`;
         cy.route('POST', boxplotRequest).as('boxplotRequest');
