@@ -43,7 +43,7 @@ export default () =>
     beforeEach(() => {
       cy.server();
       cy.login();
-      cy.route('POST', '/superset/explore_json/**').as('getJson');
+      cy.route('POST', '/datains/explore_json/**').as('getJson');
     });
 
     it('should work with ad-hoc metric', () => {

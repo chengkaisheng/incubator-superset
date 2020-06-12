@@ -21,7 +21,7 @@ export default () => {
     beforeEach(() => {
       cy.login();
       cy.server();
-      cy.visit('/superset/sqllab');
+      cy.visit('/datains/sqllab');
     });
 
     it('allows you to create a tab', () => {

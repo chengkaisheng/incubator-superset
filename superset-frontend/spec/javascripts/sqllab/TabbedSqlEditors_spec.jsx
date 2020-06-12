@@ -104,7 +104,7 @@ describe('TabbedSqlEditors', () => {
         true,
       );
       expect(window.history.replaceState.getCall(0).args[2]).toBe(
-        '/superset/sqllab',
+        '/datains/sqllab',
       );
     });
     it('should handle savedQueryId', () => {
@@ -116,7 +116,7 @@ describe('TabbedSqlEditors', () => {
         true,
       );
       expect(window.history.replaceState.getCall(0).args[2]).toBe(
-        '/superset/sqllab',
+        '/datains/sqllab',
       );
     });
     it('should handle sql', () => {
@@ -128,7 +128,7 @@ describe('TabbedSqlEditors', () => {
         true,
       );
       expect(window.history.replaceState.getCall(0).args[2]).toBe(
-        '/superset/sqllab',
+        '/datains/sqllab',
       );
     });
   });

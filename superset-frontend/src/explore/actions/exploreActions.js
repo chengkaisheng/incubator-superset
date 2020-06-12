@@ -21,7 +21,7 @@ import { t } from '@superset-ui/translation';
 import { SupersetClient } from '@superset-ui/connection';
 import { addDangerToast } from '../../messageToasts/actions';
 
-const FAVESTAR_BASE_URL = '/superset/favstar/slice';
+const FAVESTAR_BASE_URL = '/datains/favstar/slice';
 
 export const SET_DATASOURCE_TYPE = 'SET_DATASOURCE_TYPE';
 export function setDatasourceType(datasourceType) {

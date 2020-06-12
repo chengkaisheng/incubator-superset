@@ -317,11 +317,11 @@ class Database(
 
         if DB_CONNECTION_MUTATOR:
             if not source and request and request.referrer:
-                if "/superset/dashboard/" in request.referrer:
+                if "/datains/dashboard/" in request.referrer:
                     source = utils.QuerySource.DASHBOARD
-                elif "/superset/explore/" in request.referrer:
+                elif "/datains/explore/" in request.referrer:
                     source = utils.QuerySource.CHART
-                elif "/superset/sqllab/" in request.referrer:
+                elif "/datains/sqllab/" in request.referrer:
                     source = utils.QuerySource.SQL_LAB
 
             sqlalchemy_url, params = DB_CONNECTION_MUTATOR(
@@ -616,7 +616,7 @@ class Database(
 
     @property
     def sql_url(self) -> str:
-        return f"/superset/sql/{self.id}/"
+        return f"/datains/sql/{self.id}/"
 
     def get_perm(self) -> str:
         return f"[{self.database_name}].(id:{self.id})"
