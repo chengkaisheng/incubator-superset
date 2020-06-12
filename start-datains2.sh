@@ -1,4 +1,7 @@
 #!/bin/bash
+# remove datains2 first
+docker rm -f datains2
+
 # start datains2 container on port 8080
 docker run -d -p 8080:8080 --name datains2 datains2:dev
 
