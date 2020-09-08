@@ -170,7 +170,7 @@
             "索引列的列标签。如果为None, 并且数据框索引为 true, 则使用 \"索引名称\"。"
          ],
          "[Superset] Access to the datasource %(name)s was granted": [
-            "[Superset] 允许访问数据源 %(name)s"
+            "允许访问数据源 %(name)s"
          ],
          "Viz is missing a datasource": [
             "Viz 缺少一个数据源"
@@ -710,7 +710,7 @@
             "如果您正在寻找的数据源在列表中不可用，请按照说明进行添加"
          ],
          "Superset tutorial": [
-            "Superset 教程"
+            "教程"
          ],
          "Choose a visualization type": [
             "选择可视化类型"
@@ -1166,13 +1166,13 @@
             "国家的名字"
          ],
          "The name of country that Superset should display": [
-            "Superset 应显示的国家名称"
+            "应显示的国家名称"
          ],
          "Country Field Type": [
             "国家字段的类型"
          ],
          "The country code standard that Superset should expect to find in the [country] column": [
-            "Superset 希望能够在 [国家] 栏中找到的 国家 / 地区 的标准代码"
+            "希望能够在 [国家] 栏中找到的 国家 / 地区 的标准代码"
          ],
          "Frequency": [
             "频率"
@@ -1298,7 +1298,7 @@
             "时间的粒度"
          ],
          "The time granularity for the visualization. This applies a date transformation to alter your time column and defines a new time granularity. The options here are defined on a per database engine basis in the Superset source code.": [
-            "可视化的时间粒度。这将应用日期转换来更改时间列，并定义新的时间粒度。这里的选项是在 Superset 源代码中的每个数据库引擎基础上定义的。"
+            "可视化的时间粒度。这将应用日期转换来更改时间列，并定义新的时间粒度。这里的选项是在源代码中的每个数据库引擎基础上定义的。"
          ],
          "Resample Rule": [
             "重新取样规则"
@@ -1583,7 +1583,7 @@
             "是否包含时间过滤器"
          ],
          "Show SQL Granularity Dropdown": [
-            "显示SQL Granularity Dropdown"
+            "显示SQL粒度下拉框"
          ],
          "Check to include SQL Granularity dropdown": [
             "检查是否包含SQL粒度下拉"
@@ -1592,19 +1592,19 @@
             "显示SQL时间列"
          ],
          "Check to include Time Column dropdown": [
-            "检查包含时间列 Dropdown"
+            "检查包含时间列下拉框"
          ],
          "Show Druid Granularity Dropdown": [
-            "显示 Druid Granularity Dropdown"
+            "显示 Druid 粒度下拉框"
          ],
          "Check to include Druid Granularity dropdown": [
-            "检查包含Druid Granularity Dropdown"
+            "检查包含Druid粒度的下拉框"
          ],
          "Show Druid Time Origin": [
             "显示Druid原始时间"
          ],
          "Check to include Time Origin dropdown": [
-            "检查包含Time Origin dropdown"
+            "检查包含时间起点下拉框"
          ],
          "Data Table": [
             "数据表"
@@ -1679,13 +1679,13 @@
             "丰富的工具提示显示了该时间点的所有系列的列表。"
          ],
          "Y Log Scale": [
-            "Y经度标度"
+            "Log(Y)表示Y轴"
          ],
          "Use a log scale for the Y axis": [
             "Y轴使用经度刻度"
          ],
          "X Log Scale": [
-            "X经度标度"
+            "Log(X)表示x轴"
          ],
          "Use a log scale for the X axis": [
             "X轴使用经度刻度"
@@ -2258,7 +2258,7 @@
             "选择要绘制直方图的数字列"
          ],
          "No of Bins": [
-            "没有直方图"
+            "直方图分组数"
          ],
          "Select number of bins for the histogram": [
             "选择直方图的容器数"
@@ -2915,7 +2915,7 @@
             "模式，只在一些数据库中使用，比如Postgres、Redshift和DB2"
          ],
          "This fields acts a Superset view, meaning that Superset will run a query against this string as a subquery.": [
-            "这个字段执行Superset视图时，意味着Superset将以子查询的形式对字符串运行查询。"
+            "这个字段执行视图时，意味着将以子查询的形式对字符串运行查询。"
          ],
          "Predicate applied when fetching distinct value to populate the filter control component. Supports jinja template syntax. Applies only when `Enable Filter Select` is on.": [
             "当获取不同的值来填充过滤器组件应用时。支持jinja的模板语法。只在`启用过滤器选择`时应用。"
@@ -4341,6 +4341,174 @@
          ],
          "Save changes": [
             "保存修改"
+         ],
+         "Ignore null locations": [
+            "忽略空地理位置"
+         ],
+         "Whether to ignore locations that are null": [
+            "是否忽略为空的地址"
+         ],
+         "No results were returned for this query. If you expected results to be returned, ensure any filters are configured properly and the datasource contains data for the selected time range.": [
+            "哈哈哈"
+         ],
+         "Target Color": [
+            "目标颜色"
+         ],
+         "Color of the target location": [
+            "目标区域的颜色"
+         ],
+         "Legend Format": [
+            "图例格式"
+         ],
+         "Choose the format for legend values": [
+            "选择图例取值的格式"
+         ],
+         "Dynamic Aggregation Function": [
+            "动态聚集函数"
+         ],
+         "The function to use when aggregating points into groups": [
+            "将点聚合成组时使用的函数"
+         ],
+         "Whether to make the grid 3D": [
+            "是否将网格3D化"
+         ],
+         "Opacity, expects values between 0 and 100": [
+            "透明度, 取值在0到100之间"
+         ],
+         "Number of buckets to group data": [
+            "分组数据桶数"
+         ],
+         "Bucket break points": [
+            "分桶分割点"
+         ],
+         "Emit Filter Events": [
+            "触发过滤事件"
+         ],
+         "Whether to apply filter when items are clicked": [
+            "当对象被点击时是否触发过滤事件"
+         ],
+         "Multiple filtering": [
+            "多层过滤"
+         ],
+         "Allow sending multiple polygons as a filter event": [
+            "允许发送多个多边形作为一个过滤事件"
+         ],
+         "Big Number Font Size": [
+            "大数字字体"
+         ],
+         "Subheader Font Size": [
+            "子标题字体"
+         ],
+         "Whether to include a client-side search box": [
+            "是否包含客户端搜索框"
+         ],
+         "Show Cell Bars": [
+            "显示Cell柱"
+         ],
+         "Enable to display bar chart background elements in table columns": [
+            "允许在表列中展示柱状图背景元素"
+         ],
+         "Show Labels": [
+            "显示标签"
+         ],
+         "Whether to display the labels. Note that the label only displays when the the 5% threshold.": [
+            "是否显示标签."
+         ],
+         "Empty collection": [
+            "空序列"
+         ],
+         "Transpose Pivot": [
+            "行列转置"
+         ],
+         "Swap Groups and Columns": [
+            "组和列互换"
+         ],
+         "Minimum Font Size": [
+            "最小字体大小"
+         ],
+         "Maximum Font Size": [
+            "最大字体大小"
+         ],
+         "Word Rotation": [
+            "文字旋转"
+         ],
+         "Value Domain": [
+            "值域"
+         ],
+         "series: Treat each series independently; overall: All series use the same scale; change: Show changes compared to the first data point in each series": [
+            "series: 每个系列独立对待; overall: 所有系列采用相同比例; change: 每个系列显示与系列中第一个数据点的差异值"
+         ],
+         "Additional metadata": [
+            "额外的元数据"
+         ],
+         "Control labeled ": [
+            "字段"
+         ],
+         "How to display time shifts: as individual lines; as the absolute difference between the main time series and each time shift; as the percentage change; or as the ratio between series and time shifts.": [
+            "显示时间偏移的方法: 作为单独的线; 作为主时间序列和每个时间偏移差值的绝对值; 作为百分比; 作为序列和时间偏移的比例"
+         ],
+         "Show Trend Line": [
+            "显示趋势线"
+         ],
+         "Whether to display the trend line": [
+            "是否显示趋势线"
+         ],
+         "Start y-axis at 0": [
+            "y轴从0开始"
+         ],
+         "Start y-axis at zero. Uncheck to start y-axis at minimum value in the data.": [
+            "y轴从0开始. 不选中则y轴从数据最小值开始."
+         ],
+         "Filters Configuration": [
+            "过滤器配置"
+         ],
+         "Limit Selector Values": [
+            "限制下拉数值"
+         ],
+         "Whether to apply filters as they change, or wait for users to hit an [Apply] button": [
+            "是否在数据变化时即应用过滤器, 抑或是等到用户点击[应用]按钮才应用过滤器"
+         ],
+         "These filters apply to the values availabe ih the dropdowns": [
+            "这些过滤器将会应用到下拉框中的数值中"
+         ],
+         "Reduces the number of X-axis ticks to be rendered. If true, the x-axis will not overflow and labels may be missing. If false, a minimum width will be applied to columns and the width may overflow into an horizontal scroll.": [
+            "减少x轴刻度数量. 勾选后，x轴不会溢出但是刻度可能会缺失."
+         ],
+         "How many buckets should the data be grouped in.": [
+            "数据该分成多少分桶"
+         ],
+         "List of n+1 values for bucketing metric into n buckets.": [
+            "n+1个值用来将数据分成n个桶."
+         ],
+         "Only applies when the \"Label Type\" is not set to a percentage.": [
+            "只有当标签类别不是百分比的时候才适用."
+         ],
+         "This section contains validation errors": [
+            "此处有字段格式错误"
+         ],
+         "Select the number of bins for the histogram": [
+            "选择直方图分组数"
+         ],
+         "No filter": [
+            "无过滤"
+         ],
+         "Points and clusters will update as the viewport is being changed": [
+            "点和聚类会随着视角变化实时更新"
+         ],
+         "Use a log scale for the X-axis": [
+            "X轴用log尺度表示"
+         ],
+         "The maximum number of events to return, equivalent to the number of rows": [
+            "返回事件最大数量,等于行数"
+         ],
+         "Select any columns for metadata inspection": [
+            "选择任意列以查看元数据"
+         ],
+         "Metric to display bottom title": [
+            "显示底部标题的指标"
+         ],
+         "The name of the country that Superset should display": [
+            "显示的国家名字"
          ]
       }
    }

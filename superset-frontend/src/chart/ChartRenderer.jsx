@@ -130,7 +130,8 @@ class ChartRenderer extends React.Component {
     const { actions, chartId } = this.props;
     console.warn(error); // eslint-disable-line
     actions.chartRenderingFailed(
-      error.toString(),
+      //error.toString(),
+      "xixixix",
       chartId,
       info ? info.componentStack : null,
     );

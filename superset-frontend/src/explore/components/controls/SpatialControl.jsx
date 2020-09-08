@@ -169,11 +169,11 @@ export default class SpatialControl extends React.Component {
           >
             <Row>
               <Col md={6}>
-                Longitude
+	        {t('Longitude')}
                 {this.renderSelect('lonCol', spatialTypes.latlong)}
               </Col>
               <Col md={6}>
-                Latitude
+	        {t('Latitude')}
                 {this.renderSelect('latCol', spatialTypes.latlong)}
               </Col>
             </Row>
@@ -202,7 +202,7 @@ export default class SpatialControl extends React.Component {
           >
             <Row>
               <Col md={6}>
-                Column
+	        {t('Column')}
                 {this.renderSelect('geohashCol', spatialTypes.geohash)}
               </Col>
               <Col md={6}>{this.renderReverseCheckbox()}</Col>
@@ -215,7 +215,7 @@ export default class SpatialControl extends React.Component {
               bsStyle="primary"
               onClick={this.close.bind(this)}
             >
-              Ok
+	      {t('Ok')}
             </Button>
           </div>
         </div>

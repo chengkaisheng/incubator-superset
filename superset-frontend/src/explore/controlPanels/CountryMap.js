@@ -43,7 +43,7 @@ export default {
     },
     metric: {
       label: t('Metric'),
-      description: 'Metric to display bottom title',
+      description: t('Metric to display bottom title'),
     },
     linear_color_scheme: {
       renderTrigger: false,

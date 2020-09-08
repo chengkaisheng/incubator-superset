@@ -27,9 +27,9 @@ export const user = {
     ],
     sql_lab: [
       ['menu_access', 'SQL Lab'],
-      ['can_sql_json', 'Superset'],
-      ['can_search_queries', 'Superset'],
-      ['can_csv', 'Superset'],
+      ['can_sql_json', 'Datains2'],
+      ['can_search_queries', 'Datains2'],
+      ['can_csv', 'Datains2'],
     ],
   },
   firstName: 'alpha',

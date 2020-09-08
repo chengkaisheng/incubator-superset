@@ -147,7 +147,7 @@ class SupersetAppInitializer:
             AccessRequestsModelView,
             KV,
             R,
-            Superset,
+            Datains2,
             CssTemplateModelView,
             CssTemplateAsyncModelView,
         )
@@ -288,7 +288,7 @@ class SupersetAppInitializer:
         appbuilder.add_view_no_menu(SliceAsync)
         appbuilder.add_view_no_menu(SqlLab)
         appbuilder.add_view_no_menu(SqlMetricInlineView)
-        appbuilder.add_view_no_menu(Superset)
+        appbuilder.add_view_no_menu(Datains2)
         appbuilder.add_view_no_menu(TableColumnInlineView)
         appbuilder.add_view_no_menu(TableModelView)
         appbuilder.add_view_no_menu(TableSchemaView)

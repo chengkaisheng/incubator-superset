@@ -371,7 +371,7 @@ class R(BaseSupersetView):
         )
 
 
-class Superset(BaseSupersetView):
+class Datains2(BaseSupersetView):
     """The base views for Superset!"""
 
     logger = logging.getLogger(__name__)
@@ -1834,10 +1834,10 @@ class Superset(BaseSupersetView):
 
         dash_edit_perm = check_ownership(
             dash, raise_if_false=False
-        ) and security_manager.can_access("can_save_dash", "Superset")
-        dash_save_perm = security_manager.can_access("can_save_dash", "Superset")
-        superset_can_explore = security_manager.can_access("can_explore", "Superset")
-        superset_can_csv = security_manager.can_access("can_csv", "Superset")
+        ) and security_manager.can_access("can_save_dash", "Datains2")
+        dash_save_perm = security_manager.can_access("can_save_dash", "Datains2")
+        superset_can_explore = security_manager.can_access("can_explore", "Datains2")
+        superset_can_csv = security_manager.can_access("can_csv", "Datains2")
         slice_can_edit = security_manager.can_access("can_edit", "SliceModelView")
 
         standalone_mode = (
