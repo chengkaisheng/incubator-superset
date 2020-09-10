@@ -2445,6 +2445,8 @@ class Superset(BaseSupersetView):
         elif select_as_cta:
             tmp_schema_name = get_cta_schema_name(mydb, g.user, schema, sql)
 
+        sql = utils.get_no_comment_sql(sql)
+
         # Save current query
         query = Query(
             database_id=database_id,
@@ -2685,6 +2687,67 @@ class Superset(BaseSupersetView):
 
         return Response(
             json.dumps(dict_queries, default=utils.json_int_dttm_ser),
+            status=200,
+            mimetype="application/json",
+        )
+
+    @has_access
+    @expose("/search_suggestions", methods=["POST"])
+    @event_logger.log_this
+    def search_suggestions(self) -> Response:
+        """
+        Search for previously run sqllab queries. Used for autosuggestion.
+
+        :returns: Response with list of sql query dicts
+        """
+        string = request.form.get("string")
+        query = db.session.query(Query)
+        if security_manager.can_access_all_queries():
+            search_user_id = request.args.get("user_id")
+        elif (
+                request.args.get("user_id") is not None
+                and request.args.get("user_id") != g.user.get_user_id()
+        ):
+            return Response(status=403, mimetype="application/json")
+        else:
+            search_user_id = g.user.get_user_id()
+        database_id = request.args.get("database_id")
+        search_text = request.args.get("search_text")
+        status = request.args.get("status")
+        # From and To time stamp should be Epoch timestamp in seconds
+        from_time = request.args.get("from")
+        to_time = request.args.get("to")
+
+        if search_user_id:
+            # Filter on user_id
+            query = query.filter(Query.user_id == search_user_id)
+
+        if database_id:
+            # Filter on db Id
+            query = query.filter(Query.database_id == database_id)
+
+        if status:
+            # Filter on status
+            query = query.filter(Query.status == status)
+
+        if search_text:
+            # Filter on search text
+            query = query.filter(Query.sql.like("%{}%".format(search_text)))
+
+        if from_time:
+            query = query.filter(Query.start_time > int(from_time))
+
+        if to_time:
+            query = query.filter(Query.start_time < int(to_time))
+
+        query_limit = config["QUERY_SUGGESTION_LIMIT"]
+        sql_queries = query.order_by(Query.start_time.asc()).limit(query_limit).all()
+
+        sql_list = [q.to_dict()["sql"] for q in sql_queries]
+        suggestion_list = utils.get_suggestion_list(sql_list, string)
+
+        return Response(
+            json.dumps(suggestion_list, default=utils.json_int_dttm_ser),
             status=200,
             mimetype="application/json",
         )

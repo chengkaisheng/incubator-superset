@@ -1304,6 +1304,34 @@ def get_iterable(x: Any) -> List:
     return x if isinstance(x, list) else [x]
 
 
+def get_no_comment_sql(sql: str) -> str:
+    """
+    Get a row sql statement from user input and delete comments in it.
+
+    :param sql: str
+    :returns: sql string without comments.
+    """
+    split_sql = sql.lstrip().split("\n")
+    useful_statements = []
+    for s in split_sql:
+        if not s.startswith("--"):
+            useful_statements.append(s)
+    return "\n".join(useful_statements)
+
+
+def get_suggestion_list(sql_list: List[str], string: str) -> List[str]:
+    """
+    :param sql_list: sql statements read from database
+    :param string: user input from textarea
+    :returns: list of sql statements which startswith string
+    """
+    suggestion_list = []
+    for sql in sql_list:
+        if sql.startswith(string):
+            suggestion_list.append(sql)
+    return suggestion_list
+
+
 class TimeRangeEndpoint(str, Enum):
     """
     The time range endpoint types which represent inclusive, exclusive, or unknown.
