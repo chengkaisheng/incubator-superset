@@ -1072,7 +1072,17 @@ class Superset(BaseSupersetView):
         else:
             schemas = []
 
-        return Response(json.dumps({"schemas": schemas}), mimetype="application/json")
+        suggestion_list = self.search_suggestions()
+
+        # return Response(
+        #     json.dumps({"schemas": schemas, "suggestion list": suggestion_list}),
+        #     mimetype="application/json"
+        # )
+
+        return Response(
+            json.dumps({"schemas": schemas + suggestion_list}),
+            mimetype="application/json"
+        )
 
     @api
     @has_access_api
@@ -2445,8 +2455,6 @@ class Superset(BaseSupersetView):
         elif select_as_cta:
             tmp_schema_name = get_cta_schema_name(mydb, g.user, schema, sql)
 
-        sql = utils.get_no_comment_sql(sql)
-
         # Save current query
         query = Query(
             database_id=database_id,
@@ -2691,16 +2699,16 @@ class Superset(BaseSupersetView):
             mimetype="application/json",
         )
 
-    @has_access
-    @expose("/search_suggestions", methods=["POST"])
-    @event_logger.log_this
+    # @has_access
+    # @expose("/search_suggestions", methods=["POST"])
+    # @event_logger.log_this
     def search_suggestions(self) -> Response:
         """
         Search for previously run sqllab queries. Used for autosuggestion.
 
         :returns: Response with list of sql query dicts
         """
-        string = request.form.get("string")
+        # string = request.form.get("string")
         query = db.session.query(Query)
         if security_manager.can_access_all_queries():
             search_user_id = request.args.get("user_id")
@@ -2743,14 +2751,17 @@ class Superset(BaseSupersetView):
         query_limit = config["QUERY_SUGGESTION_LIMIT"]
         sql_queries = query.order_by(Query.start_time.asc()).limit(query_limit).all()
 
-        sql_list = [q.to_dict()["sql"] for q in sql_queries]
-        suggestion_list = utils.get_suggestion_list(sql_list, string)
+        row_suggestion_list = [q.to_dict()["sql"] for q in sql_queries]
+        suggestion_list = []
+        for sql in row_suggestion_list:
+            suggestion_list.append(utils.get_no_comment_sql(sql))
 
-        return Response(
-            json.dumps(suggestion_list, default=utils.json_int_dttm_ser),
-            status=200,
-            mimetype="application/json",
-        )
+        # return Response(
+        #     json.dumps(suggestion_list, default=utils.json_int_dttm_ser),
+        #     status=200,
+        #     mimetype="application/json",
+        # )
+        return suggestion_list
 
     @app.errorhandler(500)
     def show_traceback(self):
