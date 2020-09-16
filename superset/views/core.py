@@ -2756,12 +2756,11 @@ class Superset(BaseSupersetView):
         for sql in row_suggestion_list:
             suggestion_list.append(utils.get_no_comment_sql(sql))
 
-        # return Response(
-        #     json.dumps(suggestion_list, default=utils.json_int_dttm_ser),
-        #     status=200,
-        #     mimetype="application/json",
-        # )
-        return suggestion_list
+        return Response(
+            json.dumps(suggestion_list, default=utils.json_int_dttm_ser),
+            status=200,
+            mimetype="application/json",
+        )
 
     @app.errorhandler(500)
     def show_traceback(self):
@@ -2930,6 +2929,14 @@ class Superset(BaseSupersetView):
                 "Failed to fetch schemas allowed for csv upload in this database! "
                 "Please contact your Superset Admin!"
             )
+
+    @expose("/dataxweb_login", methods=["POST"])
+    def dataxweb_login(self):
+
+        if not g.user or not g.user.get_id():
+            return redirect(appbuilder.get_url_for_login)
+
+        return self.search_queries()
 
 
 class CssTemplateModelView(SupersetModelView, DeleteMixin):
