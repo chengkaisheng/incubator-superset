@@ -110,8 +110,12 @@ class Database(
     verbose_name = Column(String(250), unique=True)
     # short unique name, used in permissions
     database_name = Column(String(250), unique=True, nullable=False)
-    sqlalchemy_uri = Column(String(1024), nullable=False)
+    sqlalchemy_uri = Column(String(1024), nullable=True)
+    database = Column(String(250), nullable=True)  # mysql / sqlite / oracle
+    username = Column(String(250), nullable=True)
     password = Column(EncryptedType(String(1024), config["SECRET_KEY"]))
+    host = Column(String(250), nullable=True)
+    port = Column(Integer, nullable=True)
     cache_timeout = Column(Integer)
     select_as_create_table_as = Column(Boolean, default=False)
     expose_in_sqllab = Column(Boolean, default=True)
@@ -633,6 +637,18 @@ class Database(
     def get_dialect(self) -> Dialect:
         sqla_url = url.make_url(self.sqlalchemy_uri_decrypted)
         return sqla_url.get_dialect()()
+
+
+# class CustomDatabase(Database):
+#
+#     """Custom Database model"""
+#
+#     username = Column(String(250), nullable=False)
+#     password = Column(String(250), nullable=False)
+#     host = Column(String(250), nullable=False)
+#     port = Column(Integer, nullable=False)
+#     database_source = Column(String(250), nullable=False)
+
 
 
 sqla.event.listen(Database, "after_insert", security_manager.set_perm)

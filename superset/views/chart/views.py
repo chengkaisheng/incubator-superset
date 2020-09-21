@@ -57,6 +57,7 @@ class SliceModelView(
         datasources = [
             {"value": str(d.id) + "__" + d.type, "label": repr(d)} for d in datasources
         ]
+
         return self.render_template(
             "superset/add_slice.html",
             bootstrap_data=json.dumps(

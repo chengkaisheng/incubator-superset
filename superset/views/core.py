@@ -1072,15 +1072,10 @@ class Superset(BaseSupersetView):
         else:
             schemas = []
 
-        suggestion_list = self.search_suggestions()
-
-        # return Response(
-        #     json.dumps({"schemas": schemas, "suggestion list": suggestion_list}),
-        #     mimetype="application/json"
-        # )
+        suggestions = self.search_suggestions()
 
         return Response(
-            json.dumps({"schemas": schemas + suggestion_list}),
+            json.dumps({"schemas": schemas, "suggestions": suggestions}),
             mimetype="application/json"
         )
 
@@ -2699,10 +2694,10 @@ class Superset(BaseSupersetView):
             mimetype="application/json",
         )
 
-    # @has_access
-    # @expose("/search_suggestions", methods=["POST"])
-    # @event_logger.log_this
-    def search_suggestions(self) -> Response:
+    @has_access
+    @expose("/search_suggestions", methods=["POST"])
+    @event_logger.log_this
+    def search_suggestions(self) -> List[str]:
         """
         Search for previously run sqllab queries. Used for autosuggestion.
 
@@ -2756,11 +2751,13 @@ class Superset(BaseSupersetView):
         for sql in row_suggestion_list:
             suggestion_list.append(utils.get_no_comment_sql(sql))
 
-        return Response(
-            json.dumps(suggestion_list, default=utils.json_int_dttm_ser),
-            status=200,
-            mimetype="application/json",
-        )
+        # return Response(
+        #     json.dumps(suggestion_list, default=utils.json_int_dttm_ser),
+        #     status=200,
+        #     mimetype="application/json",
+        # )
+
+        return suggestion_list
 
     @app.errorhandler(500)
     def show_traceback(self):
