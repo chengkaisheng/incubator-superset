@@ -1347,6 +1347,7 @@ class Superset(BaseSupersetView):
         """Tests a sqla connection"""
         db_name = request.json.get("name")
         uri = request.json.get("uri")
+
         try:
             if app.config["PREVENT_UNSAFE_DB_CONNECTIONS"]:
                 check_sqlalchemy_uri(uri)

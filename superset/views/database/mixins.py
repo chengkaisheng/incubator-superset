@@ -54,7 +54,7 @@ class DatabaseMixin:
     add_columns = [
         "database_name",
         "database",
-        # "sqlalchemy_uri",
+        "sqlalchemy_uri",
         "username",
         "password",
         "host",
@@ -99,9 +99,8 @@ class DatabaseMixin:
     description_columns = {
         "sqlalchemy_uri": utils.markdown(
             _(
-            "Refer to the "
-            "SqlAlchemy docs"
-            "for more information on how to structure your URI."),
+            "The sqlalchemy uri "
+            "will be combined by system."),
             True,
         ),
         "expose_in_sqllab": _("Expose this DB in SQL Lab"),
