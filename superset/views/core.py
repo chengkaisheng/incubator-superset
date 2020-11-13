@@ -29,6 +29,7 @@ import pandas as pd
 import pyarrow as pa
 import simplejson as json
 from flask import abort, flash, g, Markup, redirect, render_template, request, Response
+from flask_cors import cross_origin
 from flask_appbuilder import expose
 from flask_appbuilder.models.sqla.interface import SQLAInterface
 from flask_appbuilder.security.decorators import has_access, has_access_api
@@ -141,7 +142,6 @@ DATABASE_KEYS = [
     "id",
 ]
 
-
 ALL_DATASOURCE_ACCESS_ERR = __(
     "This endpoint requires the `all_datasource_access` permission"
 )
@@ -168,7 +168,7 @@ def is_owner(obj, user):
 
 
 def check_datasource_perms(
-    self, datasource_type: Optional[str] = None, datasource_id: Optional[int] = None
+        self, datasource_type: Optional[str] = None, datasource_id: Optional[int] = None
 ) -> None:
     """
     Check if user can access a cached response from explore_json.
@@ -224,12 +224,12 @@ def check_slice_perms(self, slice_id):
 
 
 def _deserialize_results_payload(
-    payload: Union[bytes, str], query, use_msgpack: Optional[bool] = False
+        payload: Union[bytes, str], query, use_msgpack: Optional[bool] = False
 ) -> dict:
     logger.debug(f"Deserializing from msgpack: {use_msgpack}")
     if use_msgpack:
         with stats_timing(
-            "sqllab.query.results_backend_msgpack_deserialize", stats_logger
+                "sqllab.query.results_backend_msgpack_deserialize", stats_logger
         ):
             ds_payload = msgpack.loads(payload, raw=False)
 
@@ -250,13 +250,13 @@ def _deserialize_results_payload(
         return ds_payload
     else:
         with stats_timing(
-            "sqllab.query.results_backend_json_deserialize", stats_logger
+                "sqllab.query.results_backend_json_deserialize", stats_logger
         ):
             return json.loads(payload)  # type: ignore
 
 
 def get_cta_schema_name(
-    database: Database, user: ab_models.User, schema: str, sql: str
+        database: Database, user: ab_models.User, schema: str, sql: str
 ) -> Optional[str]:
     func: Optional[Callable[[Database, ab_models.User, str, str], str]] = config[
         "SQLLAB_CTAS_SCHEMA_NAME_FUNC"
@@ -307,7 +307,6 @@ def ping():
 
 
 class KV(BaseSupersetView):
-
     """Used for storing and retrieving key value pairs"""
 
     @event_logger.log_this
@@ -337,7 +336,6 @@ class KV(BaseSupersetView):
 
 
 class R(BaseSupersetView):
-
     """used for short urls"""
 
     @event_logger.log_this
@@ -377,6 +375,7 @@ class Superset(BaseSupersetView):
     logger = logging.getLogger(__name__)
 
     route_base = "/datains"
+
     @has_access_api
     @expose("/datasources/")
     def datasources(self):
@@ -516,12 +515,12 @@ class Superset(BaseSupersetView):
 
         requests = (
             session.query(DAR)
-            .filter(
+                .filter(
                 DAR.datasource_id == datasource_id,
                 DAR.datasource_type == datasource_type,
                 DAR.created_by_fk == requested_by.id,
             )
-            .all()
+                .all()
         )
 
         if not requests:
@@ -530,7 +529,7 @@ class Superset(BaseSupersetView):
 
         # check if you can approve
         if security_manager.all_datasource_access() or check_ownership(
-            datasource, raise_if_false=False
+                datasource, raise_if_false=False
         ):
             # can by done by admin only
             if role_to_grant:
@@ -623,7 +622,7 @@ class Superset(BaseSupersetView):
         return self.json_response({"data": viz_obj.get_samples()})
 
     def generate_json(
-        self, viz_obj, csv=False, query=False, results=False, samples=False
+            self, viz_obj, csv=False, query=False, results=False, samples=False
     ):
         if csv:
             return CsvResponse(
@@ -767,17 +766,17 @@ class Superset(BaseSupersetView):
         # Flash the SIP-15 message if the slice is owned by the current user and has not
         # been updated, i.e., is not using the [start, end) interval.
         if (
-            config["SIP_15_ENABLED"]
-            and slc
-            and g.user in slc.owners
-            and (
+                config["SIP_15_ENABLED"]
+                and slc
+                and g.user in slc.owners
+                and (
                 not form_data.get("time_range_endpoints")
                 or form_data["time_range_endpoints"]
                 != (
-                    utils.TimeRangeEndpoint.INCLUSIVE,
-                    utils.TimeRangeEndpoint.EXCLUSIVE,
+                        utils.TimeRangeEndpoint.INCLUSIVE,
+                        utils.TimeRangeEndpoint.EXCLUSIVE,
                 )
-            )
+        )
         ):
             url = Href("/datains/explore/")(
                 {
@@ -811,7 +810,7 @@ class Superset(BaseSupersetView):
             return redirect(error_redirect)
 
         if config["ENABLE_ACCESS_REQUEST"] and (
-            not security_manager.datasource_access(datasource)
+                not security_manager.datasource_access(datasource)
         ):
             flash(
                 __(security_manager.get_datasource_access_error_msg(datasource)),
@@ -872,7 +871,7 @@ class Superset(BaseSupersetView):
             )
 
         standalone = (
-            request.args.get(utils.ReservedUrlParameters.STANDALONE.value) == "true"
+                request.args.get(utils.ReservedUrlParameters.STANDALONE.value) == "true"
         )
         bootstrap_data = {
             "can_add": slice_add_perm,
@@ -940,15 +939,15 @@ class Superset(BaseSupersetView):
         return [f for f in filters if not f.get("isExtra")]
 
     def save_or_overwrite_slice(
-        self,
-        args,
-        slc,
-        slice_add_perm,
-        slice_overwrite_perm,
-        slice_download_perm,
-        datasource_id,
-        datasource_type,
-        datasource_name,
+            self,
+            args,
+            slc,
+            slice_add_perm,
+            slice_overwrite_perm,
+            slice_download_perm,
+            datasource_id,
+            datasource_type,
+            datasource_name,
     ):
         """Save or overwrite a slice"""
         slice_name = args.get("slice_name")
@@ -981,8 +980,8 @@ class Superset(BaseSupersetView):
         if request.args.get("add_to_dash") == "existing":
             dash = (
                 db.session.query(Dashboard)
-                .filter_by(id=int(request.args.get("save_to_dashboard_id")))
-                .one()
+                    .filter_by(id=int(request.args.get("save_to_dashboard_id")))
+                    .one()
             )
             # check edit dashboard permissions
             dash_overwrite_perm = check_ownership(dash, raise_if_false=False)
@@ -1084,7 +1083,7 @@ class Superset(BaseSupersetView):
     @expose("/tables/<int:db_id>/<schema>/<substr>/")
     @expose("/tables/<int:db_id>/<schema>/<substr>/<force_refresh>/")
     def tables(
-        self, db_id: int, schema: str, substr: str, force_refresh: str = "false"
+            self, db_id: int, schema: str, substr: str, force_refresh: str = "false"
     ):
         """Endpoint to fetch the list of tables for given database"""
         # Guarantees database filtering by security access
@@ -1102,22 +1101,22 @@ class Superset(BaseSupersetView):
 
         if schema_parsed:
             tables = (
-                database.get_all_table_names_in_schema(
-                    schema=schema_parsed,
-                    force=force_refresh_parsed,
-                    cache=database.table_cache_enabled,
-                    cache_timeout=database.table_cache_timeout,
-                )
-                or []
+                    database.get_all_table_names_in_schema(
+                        schema=schema_parsed,
+                        force=force_refresh_parsed,
+                        cache=database.table_cache_enabled,
+                        cache_timeout=database.table_cache_timeout,
+                    )
+                    or []
             )
             views = (
-                database.get_all_view_names_in_schema(
-                    schema=schema_parsed,
-                    force=force_refresh_parsed,
-                    cache=database.table_cache_enabled,
-                    cache_timeout=database.table_cache_timeout,
-                )
-                or []
+                    database.get_all_view_names_in_schema(
+                        schema=schema_parsed,
+                        force=force_refresh_parsed,
+                        cache=database.table_cache_enabled,
+                        cache_timeout=database.table_cache_timeout,
+                    )
+                    or []
             )
         else:
             tables = database.get_all_table_names_in_database(
@@ -1210,9 +1209,9 @@ class Superset(BaseSupersetView):
             # update chartId of layout entities
             for value in data["positions"].values():
                 if (
-                    isinstance(value, dict)
-                    and value.get("meta")
-                    and value.get("meta").get("chartId")
+                        isinstance(value, dict)
+                        and value.get("meta")
+                        and value.get("meta").get("chartId")
                 ):
                     old_id = value.get("meta").get("chartId")
                     new_id = old_to_new_slice_ids[old_id]
@@ -1246,7 +1245,7 @@ class Superset(BaseSupersetView):
 
     @staticmethod
     def _set_dash_metadata(
-        dashboard, data, old_to_new_slice_ids: Optional[Dict[int, int]] = None
+            dashboard, data, old_to_new_slice_ids: Optional[Dict[int, int]] = None
     ):
         positions = data["positions"]
         # find slices in the position data
@@ -1358,8 +1357,8 @@ class Superset(BaseSupersetView):
             if db_name:
                 existing_database = (
                     db.session.query(models.Database)
-                    .filter_by(database_name=db_name)
-                    .one_or_none()
+                        .filter_by(database_name=db_name)
+                        .one_or_none()
                 )
                 if existing_database and uri == existing_database.safe_sqlalchemy_uri():
                     uri = existing_database.sqlalchemy_uri_decrypted
@@ -1430,16 +1429,16 @@ class Superset(BaseSupersetView):
 
         qry = (
             db.session.query(M.Log, M.Dashboard, Slice)
-            .outerjoin(M.Dashboard, M.Dashboard.id == M.Log.dashboard_id)
-            .outerjoin(Slice, Slice.id == M.Log.slice_id)
-            .filter(
+                .outerjoin(M.Dashboard, M.Dashboard.id == M.Log.dashboard_id)
+                .outerjoin(Slice, Slice.id == M.Log.slice_id)
+                .filter(
                 and_(
                     ~M.Log.action.in_(("queries", "shortner", "sql_json")),
                     M.Log.user_id == user_id,
                 )
             )
-            .order_by(M.Log.dttm.desc())
-            .limit(limit)
+                .order_by(M.Log.dttm.desc())
+                .limit(limit)
         )
         payload = []
         for log in qry.all():
@@ -1497,7 +1496,7 @@ class Superset(BaseSupersetView):
     def fave_dashboards(self, user_id):
         qry = (
             db.session.query(Dashboard, models.FavStar.dttm)
-            .join(
+                .join(
                 models.FavStar,
                 and_(
                     models.FavStar.user_id == int(user_id),
@@ -1505,7 +1504,7 @@ class Superset(BaseSupersetView):
                     Dashboard.id == models.FavStar.obj_id,
                 ),
             )
-            .order_by(models.FavStar.dttm.desc())
+                .order_by(models.FavStar.dttm.desc())
         )
         payload = []
         for o in qry.all():
@@ -1530,8 +1529,8 @@ class Superset(BaseSupersetView):
         Dash = Dashboard
         qry = (
             db.session.query(Dash)
-            .filter(or_(Dash.created_by_fk == user_id, Dash.changed_by_fk == user_id))
-            .order_by(Dash.changed_on.desc())
+                .filter(or_(Dash.created_by_fk == user_id, Dash.changed_by_fk == user_id))
+                .order_by(Dash.changed_on.desc())
         )
         payload = [
             {
@@ -1556,7 +1555,7 @@ class Superset(BaseSupersetView):
         FavStar = models.FavStar
         qry = (
             db.session.query(Slice, FavStar.dttm)
-            .join(
+                .join(
                 models.FavStar,
                 and_(
                     models.FavStar.user_id == int(user_id),
@@ -1565,14 +1564,14 @@ class Superset(BaseSupersetView):
                 ),
                 isouter=True,
             )
-            .filter(
+                .filter(
                 or_(
                     Slice.created_by_fk == user_id,
                     Slice.changed_by_fk == user_id,
                     FavStar.user_id == user_id,
                 )
             )
-            .order_by(Slice.slice_name.asc())
+                .order_by(Slice.slice_name.asc())
         )
         payload = [
             {
@@ -1597,8 +1596,8 @@ class Superset(BaseSupersetView):
             user_id = g.user.id
         qry = (
             db.session.query(Slice)
-            .filter(or_(Slice.created_by_fk == user_id, Slice.changed_by_fk == user_id))
-            .order_by(Slice.changed_on.desc())
+                .filter(or_(Slice.created_by_fk == user_id, Slice.changed_by_fk == user_id))
+                .order_by(Slice.changed_on.desc())
         )
         payload = [
             {
@@ -1622,7 +1621,7 @@ class Superset(BaseSupersetView):
             user_id = g.user.id
         qry = (
             db.session.query(Slice, models.FavStar.dttm)
-            .join(
+                .join(
                 models.FavStar,
                 and_(
                     models.FavStar.user_id == int(user_id),
@@ -1630,7 +1629,7 @@ class Superset(BaseSupersetView):
                     Slice.id == models.FavStar.obj_id,
                 ),
             )
-            .order_by(models.FavStar.dttm.desc())
+                .order_by(models.FavStar.dttm.desc())
         )
         payload = []
         for o in qry.all():
@@ -1681,8 +1680,8 @@ class Superset(BaseSupersetView):
             SqlaTable = ConnectorRegistry.sources["table"]
             table = (
                 session.query(SqlaTable)
-                .join(models.Database)
-                .filter(
+                    .join(models.Database)
+                    .filter(
                     models.Database.database_name == db_name
                     or SqlaTable.table_name == table_name
                 )
@@ -1698,8 +1697,8 @@ class Superset(BaseSupersetView):
                 )
             slices = (
                 session.query(Slice)
-                .filter_by(datasource_id=table.id, datasource_type=table.type)
-                .all()
+                    .filter_by(datasource_id=table.id, datasource_type=table.type)
+                    .all()
             )
 
         result = []
@@ -1739,8 +1738,8 @@ class Superset(BaseSupersetView):
         count = 0
         favs = (
             session.query(FavStar)
-            .filter_by(class_name=class_name, obj_id=obj_id, user_id=g.user.get_id())
-            .all()
+                .filter_by(class_name=class_name, obj_id=obj_id, user_id=g.user.get_id())
+                .all()
         )
         if action == "select":
             if not favs:
@@ -1847,10 +1846,10 @@ class Superset(BaseSupersetView):
         slice_can_edit = security_manager.can_access("can_edit", "SliceModelView")
 
         standalone_mode = (
-            request.args.get(utils.ReservedUrlParameters.STANDALONE.value) == "true"
+                request.args.get(utils.ReservedUrlParameters.STANDALONE.value) == "true"
         )
         edit_mode = (
-            request.args.get(utils.ReservedUrlParameters.EDIT_MODE.value) == "true"
+                request.args.get(utils.ReservedUrlParameters.EDIT_MODE.value) == "true"
         )
 
         # Hack to log the dashboard_id properly, even when getting a slug
@@ -1953,8 +1952,8 @@ class Superset(BaseSupersetView):
             return json_error_response(err_msg)
         cluster = (
             db.session.query(DruidCluster)
-            .filter_by(cluster_name=cluster_name)
-            .one_or_none()
+                .filter_by(cluster_name=cluster_name)
+                .one_or_none()
         )
         if not cluster:
             err_msg = __(
@@ -1989,8 +1988,8 @@ class Superset(BaseSupersetView):
         database_id = data.get("dbId")
         table = (
             db.session.query(SqlaTable)
-            .filter_by(database_id=database_id, table_name=table_name)
-            .one_or_none()
+                .filter_by(database_id=database_id, table_name=table_name)
+                .one_or_none()
         )
         if not table:
             # Create table if doesn't exist.
@@ -2022,8 +2021,8 @@ class Superset(BaseSupersetView):
         database_id = data.get("dbId")
         table = (
             db.session.query(SqlaTable)
-            .filter_by(database_id=database_id, table_name=table_name)
-            .one_or_none()
+                .filter_by(database_id=database_id, table_name=table_name)
+                .one_or_none()
         )
         if not table:
             table = SqlaTable(table_name=table_name, owners=[g.user])
@@ -2104,7 +2103,7 @@ class Superset(BaseSupersetView):
     @expose("/estimate_query_cost/<database_id>/<schema>/", methods=["POST"])
     @event_logger.log_this
     def estimate_query_cost(
-        self, database_id: int, schema: Optional[str] = None
+            self, database_id: int, schema: Optional[str] = None
     ) -> Response:
         mydb = db.session.query(models.Database).get(database_id)
 
@@ -2297,12 +2296,12 @@ class Superset(BaseSupersetView):
                 return json_error_response(f"{msg}")
 
     def _sql_json_async(
-        self,
-        session: Session,
-        rendered_query: str,
-        query: Query,
-        expand_data: bool,
-        log_params: Optional[Dict[str, Any]] = None,
+            self,
+            session: Session,
+            rendered_query: str,
+            query: Query,
+            expand_data: bool,
+            log_params: Optional[Dict[str, Any]] = None,
     ) -> str:
         """
             Send SQL JSON query to celery workers
@@ -2348,12 +2347,12 @@ class Superset(BaseSupersetView):
         return resp
 
     def _sql_json_sync(
-        self,
-        session: Session,
-        rendered_query: str,
-        query: Query,
-        expand_data: bool,
-        log_params: Optional[Dict[str, Any]] = None,
+            self,
+            session: Session,
+            rendered_query: str,
+            query: Query,
+            expand_data: bool,
+            log_params: Optional[Dict[str, Any]] = None,
     ) -> str:
         """
             Execute SQL query (sql json)
@@ -2366,8 +2365,8 @@ class Superset(BaseSupersetView):
             timeout = config["SQLLAB_TIMEOUT"]
             timeout_msg = f"The query exceeded the {timeout} seconds timeout."
             store_results = (
-                is_feature_enabled("SQLLAB_BACKEND_PERSISTENCE")
-                and not query.select_as_cta
+                    is_feature_enabled("SQLLAB_BACKEND_PERSISTENCE")
+                    and not query.select_as_cta
             )
             with utils.timeout(seconds=timeout, error_message=timeout_msg):
                 # pylint: disable=no-value-for-parameter
@@ -2404,7 +2403,7 @@ class Superset(BaseSupersetView):
         return self.sql_json_exec(request.json, log_params)
 
     def sql_json_exec(
-        self, query_params: dict, log_params: Optional[Dict[str, Any]] = None
+            self, query_params: dict, log_params: Optional[Dict[str, Any]] = None
     ):
         """Runs arbitrary sql and returns data as json"""
         # Collect Values
@@ -2624,10 +2623,10 @@ class Superset(BaseSupersetView):
 
         sql_queries = (
             db.session.query(Query)
-            .filter(
+                .filter(
                 Query.user_id == g.user.get_id(), Query.changed_on >= last_updated_dt
             )
-            .all()
+                .all()
         )
         dict_queries = {q.client_id: q.to_dict() for q in sql_queries}
         return json_success(json.dumps(dict_queries, default=utils.json_int_dttm_ser))
@@ -2649,8 +2648,8 @@ class Superset(BaseSupersetView):
         if security_manager.can_access_all_queries():
             search_user_id = request.args.get("user_id")
         elif (
-            request.args.get("user_id") is not None
-            and request.args.get("user_id") != g.user.get_user_id()
+                request.args.get("user_id") is not None
+                and request.args.get("user_id") != g.user.get_user_id()
         ):
             return Response(status=403, mimetype="application/json")
         else:
@@ -2775,8 +2774,8 @@ class Superset(BaseSupersetView):
 
         welcome_dashboard_id = (
             db.session.query(UserAttribute.welcome_dashboard_id)
-            .filter_by(user_id=g.user.get_id())
-            .scalar()
+                .filter_by(user_id=g.user.get_id())
+                .scalar()
         )
         if welcome_dashboard_id:
             return self.dashboard(str(welcome_dashboard_id))
@@ -2826,16 +2825,16 @@ class Superset(BaseSupersetView):
         # send list of tab state ids
         tabs_state = (
             db.session.query(TabState.id, TabState.label)
-            .filter_by(user_id=user_id)
-            .all()
+                .filter_by(user_id=user_id)
+                .all()
         )
         tab_state_ids = [str(tab_state[0]) for tab_state in tabs_state]
         # return first active tab, or fallback to another one if no tab is active
         active_tab = (
             db.session.query(TabState)
-            .filter_by(user_id=user_id)
-            .order_by(TabState.active.desc())
-            .first()
+                .filter_by(user_id=user_id)
+                .order_by(TabState.active.desc())
+                .first()
         )
 
         databases: Dict[int, Any] = {}
@@ -2852,9 +2851,9 @@ class Superset(BaseSupersetView):
             # return all user queries associated with existing SQL editors
             user_queries = (
                 db.session.query(Query)
-                .filter_by(user_id=user_id)
-                .filter(Query.sql_editor_id.in_(tab_state_ids))
-                .all()
+                    .filter_by(user_id=user_id)
+                    .filter(Query.sql_editor_id.in_(tab_state_ids))
+                    .all()
             )
             queries = {
                 query.client_id: {k: v for k, v in query.to_dict().items()}
@@ -2908,8 +2907,8 @@ class Superset(BaseSupersetView):
         try:
             schemas_allowed = database.get_schema_access_for_csv_upload()
             if (
-                security_manager.database_access(database)
-                or security_manager.all_datasource_access()
+                    security_manager.database_access(database)
+                    or security_manager.all_datasource_access()
             ):
                 return self.json_response(schemas_allowed)
             # the list schemas_allowed should not be empty here
@@ -2928,13 +2927,15 @@ class Superset(BaseSupersetView):
                 "Please contact your Superset Admin!"
             )
 
-    @expose("/dataxweb_login", methods=["POST"])
-    def dataxweb_login(self):
-
-        if not g.user or not g.user.get_id():
-            return redirect(appbuilder.get_url_for_login)
-
-        return self.search_queries()
+    @cross_origin(
+        methods="POST",
+        origins="*",
+        supports_credentials=True,
+        expose_headers=["Set-Cookie"]
+    )
+    @expose("/login/", methods=["GET", "POST"])
+    def login(self):
+        return self.welcome()
 
 
 class CssTemplateModelView(SupersetModelView, DeleteMixin):
@@ -2950,12 +2951,12 @@ class CssTemplateModelView(SupersetModelView, DeleteMixin):
     edit_columns = ["template_name", "css"]
     add_columns = edit_columns
     label_columns = {
-            "template_name": _("Template Name"),
-            "created_by": _("Created By"),
-            "changed_by": _("Changed By"),
-            "created_on": _("Created On"),
-            "changed_on": _("Changed On"),
-            }
+        "template_name": _("Template Name"),
+        "created_by": _("Created By"),
+        "changed_by": _("Changed By"),
+        "created_on": _("Created On"),
+        "changed_on": _("Changed On"),
+    }
 
 
 class CssTemplateAsyncModelView(CssTemplateModelView):
