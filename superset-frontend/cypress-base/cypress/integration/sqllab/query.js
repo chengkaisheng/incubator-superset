@@ -24,9 +24,9 @@ export default () => {
     beforeEach(() => {
       cy.login();
       cy.server();
-      cy.visit('/datains/sqllab');
+      cy.visit('/superset/sqllab');
 
-      cy.route('POST', '/datains/sql_json/').as('sqlLabQuery');
+      cy.route('POST', '/superset/sql_json/').as('sqlLabQuery');
     });
 
     it.skip('supports entering and running a query', () => {

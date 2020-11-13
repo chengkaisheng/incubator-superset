@@ -59,7 +59,7 @@ let queryCount = 1;
 class TabbedSqlEditors extends React.PureComponent {
   constructor(props) {
     super(props);
-    const sqlLabUrl = '/datains/sqllab';
+    const sqlLabUrl = '/superset/sqllab';
     this.state = {
       sqlLabUrl,
       queriesArray: [],

@@ -44,7 +44,7 @@
 
 import readResponseBlob from '../utils/readResponseBlob';
 
-const BASE_EXPLORE_URL = '/datains/explore/?form_data=';
+const BASE_EXPLORE_URL = '/superset/explore/?form_data=';
 
 Cypress.Commands.add('login', () => {
   cy.request({

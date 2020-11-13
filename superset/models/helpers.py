@@ -308,7 +308,7 @@ class ImportMixin:
 def _user_link(user):  # pylint: disable=no-self-use
     if not user:
         return ""
-    url = "/datains/profile/{}/".format(user.username)
+    url = "/superset/profile/{}/".format(user.username)
     return Markup('<a href="{}">{}</a>'.format(url, escape(user) or ""))
 
 

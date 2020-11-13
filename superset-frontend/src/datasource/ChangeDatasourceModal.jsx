@@ -63,7 +63,7 @@ class ChangeDatasourceModal extends React.PureComponent {
     }
     if (!this.state.datasources) {
       SupersetClient.get({
-        endpoint: '/datains/datasources/',
+        endpoint: '/superset/datasources/',
       })
         .then(({ json }) => {
           const datasources = json.map(ds => ({

@@ -58,7 +58,7 @@ export function removeSlice(sliceId) {
   return { type: REMOVE_SLICE, sliceId };
 }
 
-const FAVESTAR_BASE_URL = '/datains/favstar/Dashboard';
+const FAVESTAR_BASE_URL = '/superset/favstar/Dashboard';
 export const TOGGLE_FAVE_STAR = 'TOGGLE_FAVE_STAR';
 export function toggleFaveStar(isStarred) {
   return { type: TOGGLE_FAVE_STAR, isStarred };

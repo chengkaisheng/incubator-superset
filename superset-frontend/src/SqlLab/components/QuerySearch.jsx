@@ -194,7 +194,7 @@ class QuerySearch extends React.PureComponent {
     ];
 
     SupersetClient.get({
-      endpoint: this.insertParams('/datains/search_queries', params),
+      endpoint: this.insertParams('/superset/search_queries', params),
     })
       .then(({ json }) => {
         this.setState({ queriesArray: json, queriesLoading: false });

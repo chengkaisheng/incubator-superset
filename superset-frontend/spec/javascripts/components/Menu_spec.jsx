@@ -72,7 +72,7 @@ const defaultProps = {
       },
     ],
     brand: {
-      path: '/datains/profile/admin/',
+      path: '/superset/profile/admin/',
       icon: '/static/assets/images/superset-logo@2x.png',
       alt: 'Superset',
     },

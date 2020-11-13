@@ -26,8 +26,8 @@ describe('Test explore links', () => {
   beforeEach(() => {
     cy.login();
     cy.server();
-    cy.route('GET', '/datains/explore_json/**').as('getJson');
-    cy.route('POST', '/datains/explore_json/**').as('postJson');
+    cy.route('GET', '/superset/explore_json/**').as('getJson');
+    cy.route('POST', '/superset/explore_json/**').as('postJson');
   });
 
   it('Open and close view query modal', () => {

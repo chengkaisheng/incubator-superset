@@ -65,11 +65,11 @@ export function getAnnotationJsonUrl(slice_id, form_data, isNative) {
 
 export function getURIDirectory(formData, endpointType = 'base') {
   // Building the directory part of the URI
-  let directory = '/datains/explore/';
+  let directory = '/superset/explore/';
   if (
     ['json', 'csv', 'query', 'results', 'samples'].indexOf(endpointType) >= 0
   ) {
-    directory = '/datains/explore_json/';
+    directory = '/superset/explore_json/';
   }
   return directory;
 }

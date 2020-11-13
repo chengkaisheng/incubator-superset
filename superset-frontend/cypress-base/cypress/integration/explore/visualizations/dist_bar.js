@@ -27,7 +27,7 @@ export default () =>
     beforeEach(() => {
       cy.login();
       cy.server();
-      cy.route('POST', '/datains/explore_json/**').as('getJson');
+      cy.route('POST', '/superset/explore_json/**').as('getJson');
     });
 
     it('Test dist bar with adhoc metric', () => {

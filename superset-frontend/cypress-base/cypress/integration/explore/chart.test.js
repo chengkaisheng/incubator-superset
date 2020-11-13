@@ -23,7 +23,7 @@ describe('No Results', () => {
   beforeEach(() => {
     cy.login();
     cy.server();
-    cy.route('POST', '/datains/explore_json/**').as('getJson');
+    cy.route('POST', '/superset/explore_json/**').as('getJson');
   });
 
   it('No results  message shows up', () => {

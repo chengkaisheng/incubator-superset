@@ -47,7 +47,7 @@ describe('exploreUtils', () => {
         force: false,
         curUrl: 'http://superset.com',
       });
-      compareURI(URI(url), URI('/datains/explore/'));
+      compareURI(URI(url), URI('/superset/explore/'));
       expect(payload).toEqual(formData);
     });
     it('generates proper json url', () => {
@@ -57,7 +57,7 @@ describe('exploreUtils', () => {
         force: false,
         curUrl: 'http://superset.com',
       });
-      compareURI(URI(url), URI('/datains/explore_json/'));
+      compareURI(URI(url), URI('/superset/explore_json/'));
       expect(payload).toEqual(formData);
     });
     it('generates proper json forced url', () => {
@@ -69,7 +69,7 @@ describe('exploreUtils', () => {
       });
       compareURI(
         URI(url),
-        URI('/datains/explore_json/').search({ force: 'true' }),
+        URI('/superset/explore_json/').search({ force: 'true' }),
       );
       expect(payload).toEqual(formData);
     });
@@ -82,7 +82,7 @@ describe('exploreUtils', () => {
       });
       compareURI(
         URI(url),
-        URI('/datains/explore_json/').search({ csv: 'true' }),
+        URI('/superset/explore_json/').search({ csv: 'true' }),
       );
       expect(payload).toEqual(formData);
     });
@@ -95,7 +95,7 @@ describe('exploreUtils', () => {
       });
       compareURI(
         URI(url),
-        URI('/datains/explore/').search({ standalone: 'true' }),
+        URI('/superset/explore/').search({ standalone: 'true' }),
       );
       expect(payload).toEqual(formData);
     });
@@ -108,7 +108,7 @@ describe('exploreUtils', () => {
       });
       compareURI(
         URI(url),
-        URI('/datains/explore_json/').search({ foo: 'bar' }),
+        URI('/superset/explore_json/').search({ foo: 'bar' }),
       );
       expect(payload).toEqual(formData);
     });
@@ -121,7 +121,7 @@ describe('exploreUtils', () => {
       });
       compareURI(
         URI(url),
-        URI('/datains/explore_json/').search({ foo: 'bar' }),
+        URI('/superset/explore_json/').search({ foo: 'bar' }),
       );
       expect(payload).toEqual(formData);
     });
@@ -134,7 +134,7 @@ describe('exploreUtils', () => {
       });
       compareURI(
         URI(url),
-        URI('/datains/explore_json/').search({ foo: 'bar' }),
+        URI('/superset/explore_json/').search({ foo: 'bar' }),
       );
       expect(payload).toEqual(formData);
     });
@@ -208,7 +208,7 @@ describe('exploreUtils', () => {
     it('generates proper base url with form_data', () => {
       compareURI(
         URI(getExploreLongUrl(formData, 'base')),
-        URI('/datains/explore/').search({ form_data: sFormData }),
+        URI('/superset/explore/').search({ form_data: sFormData }),
       );
     });
   });

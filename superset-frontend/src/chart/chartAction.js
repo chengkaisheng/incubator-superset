@@ -359,7 +359,7 @@ export function redirectSQLLab(formData) {
       postPayload: { form_data: formData },
     })
       .then(({ json }) => {
-        const redirectUrl = '/datains/sqllab';
+        const redirectUrl = '/superset/sqllab';
         const payload = {
           datasourceKey: formData.datasource,
           sql: json.query,

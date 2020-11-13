@@ -352,7 +352,7 @@ export function runQuery(query) {
     };
 
     return SupersetClient.post({
-      endpoint: '/datains/sql_json/',
+      endpoint: '/superset/sql_json/',
       body: JSON.stringify(postPayload),
       headers: { 'Content-Type': 'application/json' },
       parseMethod: 'text',
@@ -411,7 +411,7 @@ export function validateQuery(query) {
 export function postStopQuery(query) {
   return function(dispatch) {
     return SupersetClient.post({
-      endpoint: '/datains/stop_query/',
+      endpoint: '/superset/stop_query/',
       postPayload: { client_id: query.id },
       stringify: false,
     })
@@ -1230,7 +1230,7 @@ export function createDatasource(vizOptions) {
   return dispatch => {
     dispatch(createDatasourceStarted());
     return SupersetClient.post({
-      endpoint: '/datains/sqllab_viz/',
+      endpoint: '/superset/sqllab_viz/',
       postPayload: { data: vizOptions },
     })
       .then(({ json }) => {
@@ -1254,7 +1254,7 @@ export function createCtasDatasource(vizOptions) {
   return dispatch => {
     dispatch(createDatasourceStarted());
     return SupersetClient.post({
-      endpoint: '/datains/get_or_create_table/',
+      endpoint: '/superset/get_or_create_table/',
       postPayload: { data: vizOptions },
     })
       .then(({ json }) => {

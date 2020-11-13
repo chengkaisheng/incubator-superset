@@ -51,13 +51,13 @@ describe('async actions', () => {
 
   afterEach(fetchMock.resetHistory);
 
-  const fetchQueryEndpoint = 'glob:*/datains/results/*';
+  const fetchQueryEndpoint = 'glob:*/superset/results/*';
   fetchMock.get(
     fetchQueryEndpoint,
     JSON.stringify({ data: mockBigNumber, query: { sqlEditorId: 'dfsadfs' } }),
   );
 
-  const runQueryEndpoint = 'glob:*/datains/sql_json/*';
+  const runQueryEndpoint = 'glob:*/superset/sql_json/*';
   fetchMock.post(runQueryEndpoint, '{ "data": ' + mockBigNumber + ' }');
 
   describe('saveQuery', () => {
@@ -216,7 +216,7 @@ describe('async actions', () => {
   });
 
   describe('postStopQuery', () => {
-    const stopQueryEndpoint = 'glob:*/datains/stop_query/*';
+    const stopQueryEndpoint = 'glob:*/superset/stop_query/*';
     fetchMock.post(stopQueryEndpoint, {});
 
     const makeRequest = () => {
@@ -334,7 +334,7 @@ describe('async actions', () => {
     const getTableMetadataEndpoint = 'glob:*/api/v1/database/*';
     fetchMock.get(getTableMetadataEndpoint, {});
     const getExtraTableMetadataEndpoint =
-      'glob:*/datains/extra_table_metadata/*';
+      'glob:*/superset/extra_table_metadata/*';
     fetchMock.get(getExtraTableMetadataEndpoint, {});
 
     let isFeatureEnabledMock;

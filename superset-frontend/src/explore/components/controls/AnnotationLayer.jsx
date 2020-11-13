@@ -280,7 +280,7 @@ export default class AnnotationLayer extends React.PureComponent {
           });
         });
       } else if (requiresQuery(sourceType)) {
-        SupersetClient.get({ endpoint: '/datains/user_slices' }).then(
+        SupersetClient.get({ endpoint: '/superset/user_slices' }).then(
           ({ json }) => {
             const registry = getChartMetadataRegistry();
             this.setState({

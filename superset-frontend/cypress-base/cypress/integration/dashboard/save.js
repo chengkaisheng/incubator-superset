@@ -71,7 +71,7 @@ export default () =>
         .trigger('click', { force: true });
       cy.get('.grid-container .box_plot').should('not.exist');
 
-      cy.route('POST', '/datains/save_dash/**/').as('saveRequest');
+      cy.route('POST', '/superset/save_dash/**/').as('saveRequest');
       cy.get('.dashboard-header')
         .contains('Save changes')
         .trigger('click', { force: true });
