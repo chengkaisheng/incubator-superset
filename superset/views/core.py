@@ -2927,15 +2927,15 @@ class Superset(BaseSupersetView):
                 "Please contact your Superset Admin!"
             )
 
-    @cross_origin(
-        methods="POST",
-        origins="*",
-        supports_credentials=True,
-        expose_headers=["Set-Cookie"]
-    )
-    @expose("/login/", methods=["GET", "POST"])
-    def login(self):
-        return self.welcome()
+    # @cross_origin(
+    #     methods="POST",
+    #     origins="*",
+    #     supports_credentials=True,
+    #     expose_headers=["Set-Cookie"]
+    # )
+    # @expose("/login/", methods=["GET", "POST"])
+    # def login(self):
+    #     return self.welcome()
 
 
 class CssTemplateModelView(SupersetModelView, DeleteMixin):
