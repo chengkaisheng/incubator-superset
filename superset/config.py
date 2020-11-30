@@ -32,7 +32,7 @@ from typing import Any, Callable, Dict, List, Optional, TYPE_CHECKING
 
 from celery.schedules import crontab
 from dateutil import tz
-from flask_appbuilder.security.manager import AUTH_DB
+from flask_appbuilder.security.manager import AUTH_DB, AUTH_REMOTE_USER
 
 from superset.jinja_context import (  # pylint: disable=unused-import
     BaseTemplateProcessor,
@@ -41,6 +41,7 @@ from superset.stats_logger import DummyStatsLogger
 from superset.typing import CacheConfig
 from superset.utils.log import DBEventLogger
 from superset.utils.logging_configurator import DefaultLoggingConfigurator
+from superset.security.custom_manager import MySecurityManager
 
 logger = logging.getLogger(__name__)
 
@@ -125,7 +126,7 @@ SUPERSET_WEBSERVER_PORT = 8088
 SUPERSET_WEBSERVER_TIMEOUT = 60
 
 SUPERSET_DASHBOARD_POSITION_DATA_LIMIT = 65535
-CUSTOM_SECURITY_MANAGER = None
+CUSTOM_SECURITY_MANAGER = MySecurityManager
 SQLALCHEMY_TRACK_MODIFICATIONS = False
 # ---------------------------------------------------------
 
@@ -222,13 +223,13 @@ DRUID_METADATA_LINKS_ENABLED = True
 # AUTH_DB : Is for database (username/password)
 # AUTH_LDAP : Is for LDAP
 # AUTH_REMOTE_USER : Is for using REMOTE_USER from web server
-AUTH_TYPE = AUTH_DB
+AUTH_TYPE = AUTH_REMOTE_USER
 
 # Uncomment to setup Full admin role name
 # AUTH_ROLE_ADMIN = 'Admin'
 
 # Uncomment to setup Public role name, no authentication needed
-# AUTH_ROLE_PUBLIC = 'Public'
+# AUTH_ROLE_PUBLIC = 'Gamma'
 
 # Will allow user self registration
 # AUTH_USER_REGISTRATION = True
